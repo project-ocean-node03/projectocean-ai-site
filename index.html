@@ -16,17 +16,27 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <style>
-    :root{
-      --bg:#0b1020;
-      --bg2:#0e1630;
-      --text:#eaf2ff;
-      --muted:#a7b3c7;
-      --accent:#9ec7ff;
-      --badge:#173358;
-      --badge-border:#2b5fa1;
-      --cta:#2f7df6;
-      --cta-hover:#1e62cc;
-      --ring: rgba(158,199,255,.55);
+:root{
+  /* Deep ocean tone + high contrast */
+  --bg:#050811;
+  --bg2:#0a1122;
+  --text:#f1f6fa;
+  --muted:#aeb9cb;
+  --accent:#bcd6ff;
+  --badge:#132a4e;
+  --badge-border:#2b5fa1;
+  --cta:#2f7df6;
+  --cta-hover:#1e62cc;
+  --ring: rgba(158,199,255,.55);
+}
+    @media (prefers-color-scheme: dark){
+  :root{
+    --bg:#050811;
+    --bg2:#0a1122;
+    --text:#f4f8ff;
+    --muted:#b7c3d6;
+  }
+    }
     }
     /* Reset */
     *{box-sizing:border-box}
@@ -40,6 +50,10 @@
         radial-gradient(1200px 700px at 120% 10%, #0e1a36 0%, transparent 60%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       overflow-x:hidden;
+      <h1 class="fade-in">Humanity’s next wave of intelligence.</h1>
+<p class="lede fade-in fade-2">…</p>
+<p class="badge fade-in fade-3">Launches 2026 <small>(private preview)</small></p>
+<a class="cta fade-in fade-4" href="mailto:…">Request Investor Access</a>
     }
 
     /* Subtle animated grain + gradient drift */
@@ -72,21 +86,36 @@
       display:flex; align-items:center; gap:14px;
       letter-spacing:.22em; font-weight:700; color:var(--accent);
     }
-    .logo{
-      width:26px; height:26px; border-radius:50%;
-      background: radial-gradient(55% 55% at 40% 40%, #dff0ff 0%, #9ec7ff 45%, #3a77ff 80%, transparent 100%);
-      box-shadow: 0 0 0 6px rgba(158,199,255,.12),
-                  0 0 24px 6px var(--ring),
-                  0 0 80px 12px rgba(53,130,255,.25);
-      animation:pulse 3.6s ease-in-out infinite;
+.logo{
+  width:26px;height:26px;border-radius:50%;
+  background: radial-gradient(55% 55% at 40% 40%, #eaf4ff 0%, #bcd6ff 45%, #3a77ff 80%, transparent 100%);
+  box-shadow: 0 0 0 6px rgba(188,214,255,.10), 0 0 24px 6px var(--ring), 0 0 80px 12px rgba(60,132,255,.25);
+  transition: box-shadow .25s ease, transform .25s ease;
+  animation:pulse 3.6s ease-in-out infinite;
+}
+header:hover .logo{box-shadow:0 0 0 8px rgba(188,214,255,.16),0 0 30px 10px var(--ring),0 0 120px 18px rgba(60,132,255,.32); transform:translateY(-1px)}
     }
     @keyframes pulse{50%{box-shadow:0 0 0 8px rgba(158,199,255,.16),0 0 30px 10px var(--ring),0 0 120px 18px rgba(53,130,255,.30)}}
 
+    .fade-in{opacity:0; transform:translateY(10px); animation:fade .7s ease-out forwards}
+.fade-2{animation-delay:.1s}
+.fade-3{animation-delay:.2s}
+.fade-4{animation-delay:.35s}
+@keyframes fade{to{opacity:1; transform:none}}
+
+@media (prefers-reduced-motion: reduce){
+  .fade-in{animation:none; opacity:1; transform:none}
+}
     .wrap{max-width:1080px; margin:0 auto; padding:20px}
-    .hero{padding:56px 0 28px}
-    h1{
-      font-size: clamp(32px, 5.6vw, 62px);
-      line-height:1.15; margin:0 0 14px; letter-spacing:-.01em;
+    .hero{
+  padding:56px 0 28px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:calc(100vh - 160px);
+  margin:0 auto;
     }
     .lede{
       color:var(--muted);
@@ -117,14 +146,20 @@
     .cta:hover{transform:translateY(-2px); background:var(--cta-hover); box-shadow:0 14px 30px rgba(47,125,246,.45)}
 
     footer{
-      margin-top:64px; padding:36px 20px 64px; color:var(--muted); font-size:.98rem;
-      border-top:1px solid rgba(255,255,255,.06);
-    }
-    footer a{color:var(--accent); text-decoration:none}
-    footer a:hover{text-decoration:underline}
-    .links{display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center; align-items:center; margin-top:10px}
-    .dot{opacity:.35}
+    <!-- Footer links -->
+<div class="links">
+  <a id="m" href="#" rel="nofollow">sarah(at)projectocean(dot)ai</a>
+  <span class="dot">•</span>
+  <a href="https://www.linkedin.com/in/sarah-carmody-project-ocean" target="_blank" rel="noopener">LinkedIn</a>
+  <span class="dot">•</span>
+  <span>Palo Alto, California</span>
+</div>
 
+<script>
+  // simple obfuscation: sarah@projectocean.ai
+  (function(){
+    const u = "sarah", d = "projectocean.ai";
+    const a
     /* Accessibility prefers-reduced-motion */
     @media (prefers-reduced-motion: reduce){
       .veil::before,.veil::after,.logo{animation:none}
