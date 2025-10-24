@@ -89,7 +89,11 @@
       text-rendering:optimizeLegibility;
     }
     <section class="hero">
-  <img src="assets/hero.jpg" alt="Project Ocean Hero Image" class="hero-image">
+  <picture>
+  <source srcset="assets/hero.webp" type="image/webp">
+  <source srcset="assets/hero.jpg" type="image/jpeg">
+  <img src="assets/hero.jpg" alt="Project Ocean Hero Image" class="hero-image" loading="lazy">
+</picture>
   <div class="hero-content">
     <h1>Humanity’s next wave of intelligence.</h1>
     <p>To guide the world’s evolution toward emotionally-aware intelligence — 
