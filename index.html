@@ -29,7 +29,52 @@
       --link:#b8d8ff;
       --success:#59ffa7;
       --shadow: 0 20px 60px rgba(0,0,0,.45), 0 0 120px #1a396b30;
+   .hero {
+  position: relative;
+  text-align: center;
+  color: #e8edf3;
+  padding: 100px 20px;
+  background: radial-gradient(circle at top, #0a0f16, #000);
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  opacity: 0.25;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  backdrop-filter: blur(3px);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 28px;
+  background-color: #007bff;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #3399ff;
+}
     }
+    
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -43,6 +88,16 @@
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
+    <section class="hero">
+  <img src="assets/hero.jpg" alt="Project Ocean Hero Image" class="hero-image">
+  <div class="hero-content">
+    <h1>Humanity’s next wave of intelligence.</h1>
+    <p>To guide the world’s evolution toward emotionally-aware intelligence — 
+    where <strong>memory is private</strong>, <strong>agency is respected</strong>, 
+    and <strong>alignment is earned.</strong></p>
+    <a href="#request-access" class="cta-button">Request Private Preview</a>
+  </div>
+</section>
     a{color:var(--link); text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{width:min(1200px, 92vw); margin:0 auto}
