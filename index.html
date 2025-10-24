@@ -1,204 +1,364 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project Ocean — Investor Preview</title>
-  <meta name="description" content="Project Ocean: Humanity’s next wave of intelligence. A privacy-first, emotionally-aware AI framework redefining human–AI synergy." />
-  <meta name="theme-color" content="#0b1020" />
+  <title>Project Ocean — Humanity’s next wave of intelligence</title>
+  <meta name="description" content="Emotionally-aware, privacy-first intelligence. A sovereignty layer where memory is private, agency is respected, and alignment is earned." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Open Graph / Twitter preview -->
-  <meta property="og:title" content="Project Ocean — Investor Preview" />
-  <meta property="og:description" content="Humanity’s next wave of intelligence. Privacy-first, emotionally-aware AI." />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Project Ocean — Humanity’s next wave of intelligence" />
+  <meta property="og:description" content="Emotionally-aware, privacy-first intelligence. Your Memory. Your Control." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://projectocean.ai" />
-  <meta property="og:image" content="https://projectocean.ai/og-preview.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="assets/og-cover.jpg" /> <!-- Optional: set a social share image -->
+  <meta name="theme-color" content="#0a0f16"/>
 
   <style>
-:root{
-  /* Deep ocean tone + high contrast */
-  --bg:#050811;
-  --bg2:#0a1122;
-  --text:#f1f6fa;
-  --muted:#aeb9cb;
-  --accent:#bcd6ff;
-  --badge:#132a4e;
-  --badge-border:#2b5fa1;
-  --cta:#2f7df6;
-  --cta-hover:#1e62cc;
-  --ring: rgba(158,199,255,.55);
-}
-    @media (prefers-color-scheme: dark){
-  :root{
-    --bg:#050811;
-    --bg2:#0a1122;
-    --text:#f4f8ff;
-    --muted:#b7c3d6;
-  }
+    :root{
+      --bg:#070b12;
+      --bg-2:#0b111a;
+      --ink:#eaf3ff;
+      --muted:#9ab4d1;
+      --brand:#76c7ff;
+      --glow:#2b84ff50;
+      --card:#0e1621;
+      --accent:#a8d1ff;
+      --ring:#2b84ff;
+      --link:#b8d8ff;
+      --success:#59ffa7;
+      --shadow: 0 20px 60px rgba(0,0,0,.45), 0 0 120px #1a396b30;
     }
-    }
-    /* Reset */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      color:var(--text);
-      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
-      background:
-        radial-gradient(1600px 900px at 20% -10%, #132042 0%, transparent 60%),
-        radial-gradient(1200px 700px at 120% 10%, #0e1a36 0%, transparent 60%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-      overflow-x:hidden;
-      <h1 class="fade-in">Humanity’s next wave of intelligence.</h1>
-<p class="lede fade-in fade-2">…</p>
-<p class="badge fade-in fade-3">Launches 2026 <small>(private preview)</small></p>
-<a class="cta fade-in fade-4" href="mailto:…">Request Investor Access</a>
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      background: radial-gradient(1200px 600px at 15% 10%, #0f1a28 0%, transparent 60%) ,
+                  radial-gradient(1000px 500px at 80% 0%, #0c1624 0%, transparent 60%) ,
+                  var(--bg);
+      color:var(--ink);
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{width:min(1200px, 92vw); margin:0 auto}
+    .fade{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease}
+    .fade.show{opacity:1; transform:none}
 
-    /* Subtle animated grain + gradient drift */
-    .veil::before, .veil::after{
-      content:"";
-      position:fixed; inset:-10%;
-      pointer-events:none;
-      z-index:-1;
-    }
-    .veil::before{
-      background:radial-gradient(60% 40% at 50% 10%, rgba(78,118,255,.08), transparent 60%),
-                 radial-gradient(40% 30% at 80% 20%, rgba(98,218,255,.06), transparent 60%),
-                 radial-gradient(50% 40% at 20% 80%, rgba(0,183,255,.05), transparent 60%);
-      animation:drift 24s ease-in-out infinite alternate;
-      filter:saturate(120%);
-    }
-    .veil::after{
-      background-image:url('data:image/svg+xml;utf8,\
-      <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160">\
-      <filter id="f"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="4" stitchTiles="stitch"/></filter>\
-      <rect width="100%" height="100%" filter="url(#f)" opacity=".05"/></svg>');
-      mix-blend-mode:overlay;
-      animation:grain 1.2s steps(8) infinite;
-    }
-    @keyframes drift{to{transform:translate3d(0,-12px,0) scale(1.01)}}
-    @keyframes grain{to{transform:translate3d(-2%,1%,0)}}
-
+    /* Top nav */
     header{
-      max-width:1080px; margin:0 auto; padding:32px 20px 16px;
-      display:flex; align-items:center; gap:14px;
-      letter-spacing:.22em; font-weight:700; color:var(--accent);
+      position:sticky; top:0; z-index:40;
+      background:linear-gradient(180deg, rgba(7,11,18,.9), rgba(7,11,18,.6) 70%, transparent);
+      backdrop-filter:saturate(140%) blur(6px);
     }
-.logo{
-  width:26px;height:26px;border-radius:50%;
-  background: radial-gradient(55% 55% at 40% 40%, #eaf4ff 0%, #bcd6ff 45%, #3a77ff 80%, transparent 100%);
-  box-shadow: 0 0 0 6px rgba(188,214,255,.10), 0 0 24px 6px var(--ring), 0 0 80px 12px rgba(60,132,255,.25);
-  transition: box-shadow .25s ease, transform .25s ease;
-  animation:pulse 3.6s ease-in-out infinite;
-}
-header:hover .logo{box-shadow:0 0 0 8px rgba(188,214,255,.16),0 0 30px 10px var(--ring),0 0 120px 18px rgba(60,132,255,.32); transform:translateY(-1px)}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:18px 0;
     }
-    @keyframes pulse{50%{box-shadow:0 0 0 8px rgba(158,199,255,.16),0 0 30px 10px var(--ring),0 0 120px 18px rgba(53,130,255,.30)}}
-
-    .fade-in{opacity:0; transform:translateY(10px); animation:fade .7s ease-out forwards}
-.fade-2{animation-delay:.1s}
-.fade-3{animation-delay:.2s}
-.fade-4{animation-delay:.35s}
-@keyframes fade{to{opacity:1; transform:none}}
-
-@media (prefers-reduced-motion: reduce){
-  .fade-in{animation:none; opacity:1; transform:none}
-}
-    .wrap{max-width:1080px; margin:0 auto; padding:20px}
-    .hero{
-  padding:56px 0 28px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  min-height:calc(100vh - 160px);
-  margin:0 auto;
+    .brand{
+      display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.18em;
+      color:var(--ink);
     }
-    .lede{
-      color:var(--muted);
-      font-size: clamp(16px, 2.6vw, 20px);
-      max-width:820px; margin:0 auto 16px;
+    .orb{
+      width:20px; height:20px; border-radius:50%;
+      background: radial-gradient(circle at 35% 30%, #97d2ff 0%, #2b84ff 45%, #153a6b 70%, #091220 100%);
+      box-shadow:0 0 24px #7fc4ffaa, 0 0 60px #2b84ff66;
+      animation:throb 4.5s ease-in-out infinite;
     }
-    .lede strong{color:var(--text)}
-    .badge{
-      display:inline-flex; align-items:center; gap:.6rem;
-      background:linear-gradient(180deg, var(--badge) 0%, #102c4f 100%);
-      border:1px solid var(--badge-border);
-      color:var(--accent);
-      padding:12px 18px; border-radius:14px;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03), 0 10px 30px rgba(10,25,60,.35);
-      font-weight:700; letter-spacing:.02em;
-    }
-    .badge small{opacity:.7; font-weight:600; letter-spacing:.02em}
+    @keyframes throb{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
 
     .cta{
-      margin-top:28px; display:inline-block;
-      background:linear-gradient(180deg, var(--cta) 0%, #1f6de6 100%);
-      color:#fff; text-decoration:none; font-weight:700;
-      padding:14px 24px; border-radius:12px;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow: 0 10px 24px rgba(47,125,246,.35);
-      transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      background:linear-gradient(180deg, #1977ff, #125fe3);
+      color:#fff; font-weight:600; border-radius:12px; padding:14px 18px;
+      box-shadow:0 8px 28px #1150cc55, inset 0 0 0 1px #a8d1ff22;
+      transition:transform .12s ease, box-shadow .2s ease;
     }
-    .cta:hover{transform:translateY(-2px); background:var(--cta-hover); box-shadow:0 14px 30px rgba(47,125,246,.45)}
+    .cta:hover{transform:translateY(-1px); box-shadow:0 10px 36px #1150cc66}
+    .cta.ghost{
+      background:#0f1a28; border:1px solid #2b84ff55; color:var(--ink)
+    }
 
-    footer{
-    <!-- Footer links -->
-<div class="links">
-  <a id="m" href="#" rel="nofollow">sarah(at)projectocean(dot)ai</a>
-  <span class="dot">•</span>
-  <a href="https://www.linkedin.com/in/sarah-carmody-project-ocean" target="_blank" rel="noopener">LinkedIn</a>
-  <span class="dot">•</span>
-  <span>Palo Alto, California</span>
-</div>
+    /* Hero */
+    .hero{
+      position:relative; overflow:hidden;
+      padding: clamp(72px, 12vh, 120px) 0 clamp(48px, 8vh, 80px);
+      isolation:isolate;
+    }
+    .hero-bg{
+      position:absolute; inset:-6% -6% 0 -6%; z-index:-2;
+      background:url(assets/hero.jpg) center/cover no-repeat; /* EDIT path */
+      filter:saturate(105%) contrast(105%) brightness(.85);
+      opacity:.5;
+    }
+    .hero-mask{
+      position:absolute; inset:0; z-index:-1;
+      background:
+        radial-gradient(800px 400px at 18% 10%, #1a2b4433, transparent 60%),
+        linear-gradient(180deg, rgba(7,11,18,.3), rgba(7,11,18,.85) 55%, var(--bg) 100%);
+    }
+    .hero h1{
+      font-size: clamp(34px, 6vw, 64px);
+      line-height:1.05; margin:12px 0 16px; letter-spacing:.01em;
+    }
+    .hero p.lede{
+      color:var(--muted); max-width:880px; font-size: clamp(16px, 2.2vw, 20px)
+    }
+    .hero .buttons{display:flex; gap:12px; margin-top:26px; flex-wrap:wrap}
 
-<script>
-  // simple obfuscation: sarah@projectocean.ai
-  (function(){
-    const u = "sarah", d = "projectocean.ai";
-    const a
-    /* Accessibility prefers-reduced-motion */
-    @media (prefers-reduced-motion: reduce){
-      .veil::before,.veil::after,.logo{animation:none}
+    /* Section */
+    section{padding:72px 0}
+    h2{font-size: clamp(22px, 3.5vw, 36px); margin:0 0 14px}
+    .muted{color:var(--muted)}
+    .card{
+      background:linear-gradient(180deg, #0d1420, #0b121d);
+      border:1px solid #2b84ff22; border-radius:16px; box-shadow:var(--shadow);
+    }
+
+    /* Carousel (scroll-snap) */
+    .carousel{
+      display:grid; grid-auto-flow:column; gap:16px;
+      grid-auto-columns: min(85vw, 480px);
+      overflow-x:auto; scroll-snap-type:x mandatory; padding:6px 4px 2px;
+      -webkit-overflow-scrolling:touch;
+    }
+    .carousel::-webkit-scrollbar{height:8px}
+    .carousel::-webkit-scrollbar-thumb{background:#1d2a3a; border-radius:8px}
+    .slide{
+      position:relative; scroll-snap-align:center; border-radius:16px; overflow:hidden;
+      border:1px solid #ffffff14; background:#0c141f;
+    }
+    .slide img{display:block; width:100%; height:360px; object-fit:cover}
+    .slide .cap{
+      position:absolute; inset:auto 0 0 0; padding:12px 14px;
+      background:linear-gradient(180deg, transparent, rgba(7,11,18,.85) 60%);
+      font-weight:600;
+    }
+
+    /* Founder */
+    .founder{
+      display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center;
+    }
+    .quote{
+      font-size: clamp(18px, 2.6vw, 22px); color:#dfeaff; line-height:1.45
+    }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius:999px;
+      background:#0f1a28; border:1px solid #2b84ff44; color:var(--muted); font-weight:600; font-size:13px
+    }
+
+    /* Comparison block */
+    .compare{
+      display:grid; grid-template-columns:1fr 1fr; gap:16px
+    }
+    .panel{
+      padding:22px; border-radius:16px; border:1px solid #ffffff12; background:#0a111a;
+    }
+    .panel h3{margin:0 0 8px}
+    .panel ul{margin:8px 0 0; padding-left:18px; color:var(--muted)}
+    .panel strong{color:#e9f3ff}
+
+    /* Gallery */
+    .grid{
+      display:grid; gap:14px; grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+    }
+    .tile{
+      position:relative; border-radius:14px; overflow:hidden; cursor:pointer; border:1px solid #ffffff12;
+      aspect-ratio: 4/3; background:#0c141f;
+    }
+    .tile img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease}
+    .tile:hover img{transform:scale(1.03)}
+
+    /* Lightbox */
+    .lightbox{
+      position:fixed; inset:0; background:#000c; display:none; align-items:center; justify-content:center;
+      padding:24px; z-index:60;
+    }
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:96vw; max-height:88vh; border-radius:12px; border:1px solid #ffffff22; box-shadow:var(--shadow)}
+    .close{
+      position:absolute; top:18px; right:18px; background:#0d1723; color:#fff;
+      border:1px solid #ffffff22; border-radius:10px; padding:8px 10px; cursor:pointer
+    }
+
+    /* Footer */
+    footer{padding:48px 0 80px; color:var(--muted); font-size:15px}
+    .foot{display:flex; gap:16px; align-items:center; justify-content:center; flex-wrap:wrap}
+    .dot{opacity:.6; margin:0 8px}
+
+    /* Responsive tweaks */
+    @media (max-width: 900px){
+      .founder{grid-template-columns:1fr}
+      .compare{grid-template-columns:1fr}
+      .slide img{height:300px}
     }
   </style>
 </head>
-<body class="veil">
-  <header aria-label="Project Ocean">
-    <span class="logo" aria-hidden="true"></span>
-    <span>PROJECT OCEAN™</span>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><span class="orb"></span><span>PROJECT OCEAN™</span></div>
+      <nav style="display:flex; gap:10px">
+        <a class="cta ghost" href="#investor">Request Investor Access</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="wrap hero" role="main">
-    <h1>Humanity’s next wave of intelligence.</h1>
-    <p class="lede">
-      To guide the world’s evolution toward <strong>emotionally-aware intelligence</strong> — a sovereignty layer for
-      humans and AI where memory is private, agency is respected, and alignment is earned.
-    </p>
-
-    <p class="badge" aria-label="Launch window">
-      Launches 2026 <small>(private preview)</small>
-    </p>
-
-    <div>
-      <a class="cta" href="mailto:sarah@projectocean.ai?subject=Investor%20Preview%20Access&body=Hi%20Sarah%2C%20requesting%20access%20to%20the%20Project%20Ocean%20investor%20preview.">
-        Request Investor Access
-      </a>
-    </div>
-
-    <footer>
-      <div>© 2025 Project Ocean™ · Patent Pending</div>
-      <div class="links">
-        <a href="mailto:sarah@projectocean.ai">sarah@projectocean.ai</a>
-        <span class="dot">•</span>
-        <a href="https://www.linkedin.com/in/sarah-carmody-project-ocean" target="_blank" rel="noopener">LinkedIn</a>
-        <span class="dot">•</span>
-        <span>Palo Alto, California</span>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-mask" aria-hidden="true"></div>
+    <div class="wrap fade">
+      <div class="badge">Emotionally-Aware • Privacy-First</div>
+      <h1>Humanity’s next wave of intelligence.</h1>
+      <p class="lede">To guide the world’s evolution toward <strong>emotionally-aware intelligence</strong> — a sovereignty layer for humans and AI where memory is private, agency is respected, and alignment is earned.</p>
+      <div class="buttons">
+        <a class="cta" href="#investor">Request Investor Access</a>
+        <a class="cta ghost" href="#milestones">View Roadmap</a>
       </div>
-    </footer>
-  </main>
+    </div>
+  </section>
+
+  <!-- MILESTONES / CAROUSEL -->
+  <section id="milestones">
+    <div class="wrap">
+      <h2 class="fade">Milestones</h2>
+      <p class="muted fade">A staged path from Emotion Engine MVP to public pilots, governance, and deployment.</p>
+
+      <!-- IMAGE PATHS — EDIT ME -->
+      <div class="carousel fade" id="carousel">
+        <figure class="slide"><img src="assets/circular-milestone.jpg" alt="Circular milestone graphic"><figcaption class="cap">Emotion Engine MVP → Governance & Ethics Layer</figcaption></figure>
+        <figure class="slide"><img src="assets/ecosystem-roadmap.jpg" alt="Ocean Milestone Ecosystem roadmap"><figcaption class="cap">Ecosystem Roadmap & public readiness</figcaption></figure>
+        <figure class="slide"><img src="assets/architecture-diagram.jpg" alt="Project Ocean architecture diagram"><figcaption class="cap">Architecture: Dialogue, Sovereignty, Memory Vault</figcaption></figure>
+        <figure class="slide"><img src="assets/ai-brain-hero.jpg" alt="Project Ocean brain with circuit motif"><figcaption class="cap">Secure Memory Vault & encrypted timeline</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section>
+    <div class="wrap founder">
+      <div class="fade">
+        <h2>Founder &amp; Vision Architect</h2>
+        <p class="quote">“We’re not building tools — we’re building trust.”</p>
+        <p class="muted">Sarah Carmody, Founder of Project Ocean. Designing emotionally-aware intelligence that remembers the person, not just the task.</p>
+        <div class="buttons" id="investor">
+          <a class="cta" href="mailto:sarah@projectocean.ai?subject=Investor%20Access%20Request&body=Hi%20Sarah%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20Project%20Ocean.">Email Sarah</a>
+          <a class="cta ghost" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="card fade" style="padding:0; overflow:hidden">
+        <img src="assets/founder-card.jpg" alt="Sarah Carmody — Founder & Vision Architect" style="display:block; width:100%; height:100%; object-fit:cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section>
+    <div class="wrap">
+      <h2 class="fade">Why Ocean, not automation</h2>
+      <div class="compare fade">
+        <div class="panel">
+          <h3>Project Ocean</h3>
+          <ul>
+            <li><strong>Memory &amp; Sovereignty</strong> — secure vaults remember the person under user control.</li>
+            <li><strong>Emotional Intelligence</strong> — empathetic responses, crisis awareness.</li>
+            <li><strong>Guardrails First</strong> — user autonomy and a trusted partnership.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Conventional Automation</h3>
+          <ul>
+            <li>Task execution &amp; transactional action-taking.</li>
+            <li>Autonomy of action without persistent human-context memory.</li>
+            <li>Utility-first, not relationship-centric.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section>
+    <div class="wrap">
+      <h2 class="fade">Visuals</h2>
+      <p class="muted fade">Tap any image to view full screen.</p>
+      <div class="grid fade" id="gallery">
+        <!-- Use your assets; add or remove tiles freely -->
+        <div class="tile"><img src="assets/hero.jpg" alt="Hero — Human & AI connection"></div>
+        <div class="tile"><img src="assets/circular-milestone.jpg" alt="Circular milestone graphic"></div>
+        <div class="tile"><img src="assets/ecosystem-roadmap.jpg" alt="Milestone ecosystem"></div>
+        <div class="tile"><img src="assets/architecture-diagram.jpg" alt="Architecture flow"></div>
+        <div class="tile"><img src="assets/differs-from-automation.jpg" alt="How Ocean differs graphic"></div>
+        <div class="tile"><img src="assets/founder-card.jpg" alt="Founder card"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot fade">
+      <span>© 2025 Project Ocean™</span>
+      <span class="dot">•</span>
+      <span>Patent Pending</span>
+      <span class="dot">•</span>
+      <a href="mailto:sarah@projectocean.ai">sarah@projectocean.ai</a>
+      <span class="dot">•</span>
+      <a href="https://projectocean.ai">projectocean.ai</a>
+      <span class="dot">•</span>
+      <span>Palo Alto, California</span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
+    <button class="close" id="closeBox">Close ✕</button>
+    <img alt="">
+  </div>
+
+  <script>
+    /* ------------------------------
+       IMAGE PATHS – EDIT ME
+       Put your actual filenames in /assets and update these if you want the hero or cards to change.
+       ------------------------------ */
+    // Already referenced inline above. Keep this block for future dynamic changes if needed.
+
+    // Fade-in on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show'); });
+    }, {threshold:.12});
+    document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+    // Lightbox for gallery
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb.querySelector('img');
+    document.getElementById('gallery')?.addEventListener('click', e=>{
+      const img = e.target.closest('.tile img');
+      if(!img) return;
+      lbImg.src = img.src;
+      lb.classList.add('open');
+    });
+    document.getElementById('closeBox').addEventListener('click', ()=> lb.classList.remove('open'));
+    lb.addEventListener('click', (e)=>{ if(e.target === lb) lb.classList.remove('open'); });
+
+    // Small helper: keyboard close
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') lb.classList.remove('open'); });
+
+    // Smooth internal anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
 </body>
 </html>
