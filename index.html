@@ -1,167 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project Ocean™</title>
-  <meta name="description" content="To guide the world’s evolution toward emotionally-aware intelligence. Your Memory. Your Control." />
-  <link rel="canonical" href="https://projectocean.dev/" />
+  <title>Project Ocean — Investor Preview</title>
+  <meta name="description" content="Project Ocean: Humanity’s next wave of intelligence. A privacy-first, emotionally-aware AI framework redefining human–AI synergy." />
+  <meta name="theme-color" content="#0b1020" />
+
+  <!-- Open Graph / Twitter preview -->
+  <meta property="og:title" content="Project Ocean — Investor Preview" />
+  <meta property="og:description" content="Humanity’s next wave of intelligence. Privacy-first, emotionally-aware AI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://projectocean.ai" />
+  <meta property="og:image" content="https://projectocean.ai/og-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <style>
     :root{
-      --bg:#0a0f16;
-      --ink:#e8edf3;
-      --muted:#9fb3c8;
-      --accent:#76c7ff;
-      --accent-2:#7ed0ff33;
+      --bg:#0b1020;
+      --bg2:#0e1630;
+      --text:#eaf2ff;
+      --muted:#a7b3c7;
+      --accent:#9ec7ff;
+      --badge:#173358;
+      --badge-border:#2b5fa1;
+      --cta:#2f7df6;
+      --cta-hover:#1e62cc;
+      --ring: rgba(158,199,255,.55);
     }
+    /* Reset */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      color:var(--ink);
-      background:var(--bg);
-      font-family: "Aileron", -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, "Helvetica Neue", Arial, "Noto Sans", Ubuntu, "Cantarell", sans-serif;
-      line-height:1.55;
+      color:var(--text);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+      background:
+        radial-gradient(1600px 900px at 20% -10%, #132042 0%, transparent 60%),
+        radial-gradient(1200px 700px at 120% 10%, #0e1a36 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       overflow-x:hidden;
     }
 
-    .ocean{
-      position:fixed; inset:0; z-index:-2;
-      background:
-        radial-gradient(120% 60% at 50% 120%, #000000 10%, transparent 60%),
-        radial-gradient(120% 60% at 50% -20%, #0c141f 10%, transparent 60%),
-        linear-gradient(180deg, #0b1119 0%, #0a0f16 60%, #070c12 100%);
+    /* Subtle animated grain + gradient drift */
+    .veil::before, .veil::after{
+      content:"";
+      position:fixed; inset:-10%;
+      pointer-events:none;
+      z-index:-1;
     }
-    .wave{
-      position:fixed; inset:-10% -10% -10% -10%; z-index:-1;
-      background:
-        repeating-radial-gradient( circle at 50% 30%, rgba(126,208,255,.08) 0 2px, transparent 2px 6px);
-      mix-blend-mode:screen;
-      animation: drift 18s linear infinite;
-      opacity:.25;
-      filter: blur(1.5px);
+    .veil::before{
+      background:radial-gradient(60% 40% at 50% 10%, rgba(78,118,255,.08), transparent 60%),
+                 radial-gradient(40% 30% at 80% 20%, rgba(98,218,255,.06), transparent 60%),
+                 radial-gradient(50% 40% at 20% 80%, rgba(0,183,255,.05), transparent 60%);
+      animation:drift 24s ease-in-out infinite alternate;
+      filter:saturate(120%);
     }
-    .wave:nth-child(2){ animation-duration:26s; opacity:.18; }
-    .wave:nth-child(3){ animation-duration:34s; opacity:.12; }
-
-    @keyframes drift{
-      0%   { transform: translate3d(0,0,0) scale(1.02); }
-      50%  { transform: translate3d(0,-1.8%,0) scale(1.03); }
-      100% { transform: translate3d(0,0,0) scale(1.02); }
+    .veil::after{
+      background-image:url('data:image/svg+xml;utf8,\
+      <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160">\
+      <filter id="f"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="4" stitchTiles="stitch"/></filter>\
+      <rect width="100%" height="100%" filter="url(#f)" opacity=".05"/></svg>');
+      mix-blend-mode:overlay;
+      animation:grain 1.2s steps(8) infinite;
     }
+    @keyframes drift{to{transform:translate3d(0,-12px,0) scale(1.01)}}
+    @keyframes grain{to{transform:translate3d(-2%,1%,0)}}
 
     header{
-      width:100%;
-      padding:28px 24px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      max-width:1080px; margin:0 auto; padding:32px 20px 16px;
+      display:flex; align-items:center; gap:14px;
+      letter-spacing:.22em; font-weight:700; color:var(--accent);
     }
-    .brand{
-      font-weight:700; letter-spacing:.16rem; text-transform:uppercase;
-      font-size: clamp(20px, 1.8vw + 12px, 28px);
-      display:flex; gap:.65rem; align-items:center;
+    .logo{
+      width:26px; height:26px; border-radius:50%;
+      background: radial-gradient(55% 55% at 40% 40%, #dff0ff 0%, #9ec7ff 45%, #3a77ff 80%, transparent 100%);
+      box-shadow: 0 0 0 6px rgba(158,199,255,.12),
+                  0 0 24px 6px var(--ring),
+                  0 0 80px 12px rgba(53,130,255,.25);
+      animation:pulse 3.6s ease-in-out infinite;
     }
-    .mark{
-      width:28px; height:28px; border-radius:50%;
-      background: radial-gradient(circle at 35% 35%, #fff 0 6px, #1a2735 8px 14px, #3b5a7b 16px, transparent 18px),
-                  radial-gradient(60% 60% at 30% 70%, rgba(118,199,255,.15), transparent 70%);
-      box-shadow: 0 0 18px #7ed0ff33, inset 0 0 18px #7ed0ff1f;
-    }
+    @keyframes pulse{50%{box-shadow:0 0 0 8px rgba(158,199,255,.16),0 0 30px 10px var(--ring),0 0 120px 18px rgba(53,130,255,.30)}}
 
-    .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; }
-    .hero{
-      text-align:center;
-      padding: min(11vh,100px) 0 min(12vh,120px);
-    }
+    .wrap{max-width:1080px; margin:0 auto; padding:20px}
+    .hero{padding:56px 0 28px}
     h1{
-      margin:0 0 12px;
-      font-size: clamp(28px, 5.2vw, 60px);
-      font-weight:800;
-      letter-spacing:.02em;
+      font-size: clamp(32px, 5.6vw, 62px);
+      line-height:1.15; margin:0 0 14px; letter-spacing:-.01em;
     }
-    .tagline{
-      font-size: clamp(16px, 2.2vw, 22px);
+    .lede{
       color:var(--muted);
-      margin: 8px auto 26px;
-      max-width: 860px;
+      font-size: clamp(16px, 2.6vw, 20px);
+      max-width:820px; margin:0 auto 16px;
     }
-    .ethics{
-      margin-top:10px;
-      font-weight:600;
-      color:var(--ink);
-      letter-spacing:.02em;
+    .lede strong{color:var(--text)}
+    .badge{
+      display:inline-flex; align-items:center; gap:.6rem;
+      background:linear-gradient(180deg, var(--badge) 0%, #102c4f 100%);
+      border:1px solid var(--badge-border);
+      color:var(--accent);
+      padding:12px 18px; border-radius:14px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03), 0 10px 30px rgba(10,25,60,.35);
+      font-weight:700; letter-spacing:.02em;
     }
+    .badge small{opacity:.7; font-weight:600; letter-spacing:.02em}
 
     .cta{
-      margin-top:28px;
-      display:inline-block;
-      padding:14px 18px;
-      border-radius:14px;
-      border:1px solid #2a3a4f;
-      background: linear-gradient(180deg, #0f1823, #0a1119);
-      box-shadow: 0 10px 30px #0009, inset 0 0 0 1px #233246;
-      text-decoration:none;
-      color:var(--ink);
-      font-weight:700;
+      margin-top:28px; display:inline-block;
+      background:linear-gradient(180deg, var(--cta) 0%, #1f6de6 100%);
+      color:#fff; text-decoration:none; font-weight:700;
+      padding:14px 24px; border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: 0 10px 24px rgba(47,125,246,.35);
+      transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
     }
-    .cta small{ color:var(--muted); font-weight:500; margin-left:.5rem }
+    .cta:hover{transform:translateY(-2px); background:var(--cta-hover); box-shadow:0 14px 30px rgba(47,125,246,.45)}
 
     footer{
-      border-top:1px solid #14202e;
-      background: linear-gradient(180deg, rgba(126,208,255,.05), transparent 40%),
-                  linear-gradient(180deg, #0a0f16, #090e14);
-      padding:28px 24px 40px;
-      color:var(--muted);
+      margin-top:64px; padding:36px 20px 64px; color:var(--muted); font-size:.98rem;
+      border-top:1px solid rgba(255,255,255,.06);
     }
-    .foot{
-      display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:center;
-      font-size:15px;
+    footer a{color:var(--accent); text-decoration:none}
+    footer a:hover{text-decoration:underline}
+    .links{display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center; align-items:center; margin-top:10px}
+    .dot{opacity:.35}
+
+    /* Accessibility prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce){
+      .veil::before,.veil::after,.logo{animation:none}
     }
-    .dot{ opacity:.4; margin:0 .5rem }
-    a{ color:var(--accent); text-decoration:none }
-    a:hover{ text-decoration:underline }
   </style>
 </head>
-<body>
-  <div class="ocean" aria-hidden="true"></div>
-  <div class="wave" aria-hidden="true"></div>
-  <div class="wave" aria-hidden="true"></div>
-  <div class="wave" aria-hidden="true"></div>
-
-  <header>
-    <div class="brand">
-      <span class="mark" aria-hidden="true"></span>
-      <span>Project&nbsp;Ocean™</span>
-    </div>
+<body class="veil">
+  <header aria-label="Project Ocean">
+    <span class="logo" aria-hidden="true"></span>
+    <span>PROJECT OCEAN™</span>
   </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <h1>Humanity’s next wave of intelligence.</h1>
-      <p class="tagline">
-        To guide the world’s evolution toward emotionally-aware intelligence.
-        <br />
-        <span class="ethics">Your Memory. Your Control.</span>
-      </p>
-      <a class="cta" href="#" aria-disabled="true">
-        Launches&nbsp;2026 <small>(preview)</small>
-      </a>
-    </section>
-  </main>
+  <main class="wrap hero" role="main">
+    <h1>Humanity’s next wave of intelligence.</h1>
+    <p class="lede">
+      To guide the world’s evolution toward <strong>emotionally-aware intelligence</strong> — a sovereignty layer for
+      humans and AI where memory is private, agency is respected, and alignment is earned.
+    </p>
 
-  <footer>
-    <div class="wrap foot">
-      <span>© 2025 Project Ocean™</span>
-      <span class="dot">•</span>
-      <a href="mailto:sarah@projectocean.dev">sarah@projectocean.dev</a>
-      <span class="dot">•</span>
-      <a href="https://www.linkedin.com/in/sarah-carmody-project-ocean" target="_blank" rel="noopener">LinkedIn</a>
-      <span class="dot">•</span>
-      <span>Palo Alto, California</span>
+    <p class="badge" aria-label="Launch window">
+      Launches 2026 <small>(private preview)</small>
+    </p>
+
+    <div>
+      <a class="cta" href="mailto:sarah@projectocean.ai?subject=Investor%20Preview%20Access&body=Hi%20Sarah%2C%20requesting%20access%20to%20the%20Project%20Ocean%20investor%20preview.">
+        Request Investor Access
+      </a>
     </div>
-  </footer>
+
+    <footer>
+      <div>© 2025 Project Ocean™ · Patent Pending</div>
+      <div class="links">
+        <a href="mailto:sarah@projectocean.ai">sarah@projectocean.ai</a>
+        <span class="dot">•</span>
+        <a href="https://www.linkedin.com/in/sarah-carmody-project-ocean" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="dot">•</span>
+        <span>Palo Alto, California</span>
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
