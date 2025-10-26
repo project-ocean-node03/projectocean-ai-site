@@ -556,8 +556,68 @@
 (()=>{
   const hero = document.querySelector('.hero .wrap');
   if(hero){
+        // Reflective micro-AI (local sentiment + response)
+(()=>{
+  const input = document.getElementById('reflect-in');
+  const out = document.getElementById('reflect-out');
+  if(!input || !out) return;
+
+  const pos = ['proud','grateful','excited','hope','love','progress','joy','win','calm','safe'];
+  const neg = ['tired','worried','anxious','sad','angry','stuck','lost','overwhelmed','fail','lonely','fear'];
+  const mid = ['curious','thinking','consider','maybe','unsure','hmm'];
+
+  function tone(s){
+    s = (s||'').toLowerCase();
+    const p = pos.some(w=>s.includes(w));
+    const n = neg.some(w=>s.includes(w));
+    if(p && !n) return 'good';
+    if(n && !p) return 'bad';
+    return mid.some(w=>s.includes(w)) ? 'warn' : 'neutral';
+  }
+
+  function reply(s, t){
+    const name = 'Ocean';
+    const base = s.trim();
+    if(base.length<2) return 'Ocean reflects back what you feel. Try a thought or a feeling.';
+    const variants = {
+      good: [
+        `That’s meaningful. I’m noting what energizes you.`,
+        `I hear momentum. Let’s reinforce what’s working.`,
+        `Beautiful. I’ll preserve this so future you can build on it.`
+      ],
+      bad: [
+        `I’m here with you. Let’s take one small, kind step.`,
+        `Noted. I’ll hold this safely and suggest gentle next actions.`,
+        `Thank you for sharing. We can turn this into a plan.`
+      ],
+      warn: [
+        `Curiosity is a compass. Want a next experiment?`,
+        `Let’s map options and keep your agency in focus.`,
+        `I’ll track this question so it gets answered.`
+      ],
+      neutral: [
+        `Logged. I’ll keep this in context for future alignment.`,
+        `Understood. I’ll remember this as part of your narrative.`,
+        `Saved. When patterns emerge, I’ll surface them.`
+      ]
+    };
+    const pick = (arr)=>arr[Math.floor(Math.random()*arr.length)];
+    return `${pick(variants[t] || variants.neutral)}`;
+  }
+
+  let tm;
+  input.addEventListener('input', ()=>{
+    clearTimeout(tm);
+    tm = setTimeout(()=>{
+      const t = tone(input.value);
+      input.classList.remove('good','bad','warn');
+      if(t!=='neutral') input.classList.add(t);
+      out.textContent = reply(input.value, t);
+    }, 220);
+  });
+})();
     addEventListener('mousemove', e=>{
-      const r = hero.getBoundingClientRect();
+        const r = hero.getBoundingClientRect();
       const cx = (e.clientX - (r.left + r.width/2)) / r.width;
       const cy = (e.clientY - (r.top + r.height/2)) / r.height;
       hero.style.transform = `rotateX(${ -cy*4 }deg) rotateY(${ cx*6 }deg) translateZ(0)`;
