@@ -809,6 +809,18 @@
     }
     requestAnimationFrame(loop);
   }
+          // 🧲 Magnetic hover motion
+document.querySelectorAll('.cta, .cta.ghost').forEach(btn=>{
+  const strength = 24;
+  btn.style.transition = 'transform .15s ease';
+  btn.addEventListener('mousemove', e=>{
+    const r = btn.getBoundingClientRect();
+    const x = e.clientX - (r.left + r.width/2);
+    const y = e.clientY - (r.top + r.height/2);
+    btn.style.transform = `translate(${x/strength}px, ${y/strength}px)`;
+  });
+  btn.addEventListener('mouseleave', ()=>btn.style.transform='translate(0,0)');
+});
   addEventListener('mousemove',e=>{ mouse.x=e.clientX*dpr; mouse.y=e.clientY*dpr; },{passive:true});
   addEventListener('mouseleave',()=>{ mouse.x=-9999; },{passive:true});
   addEventListener('resize',()=>{ resize(); spawn(); },{passive:true});
