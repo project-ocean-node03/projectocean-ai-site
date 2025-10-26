@@ -190,7 +190,16 @@
     .cta.ghost{
       background:#0f1a28; border:1px solid #2b84ff55; color:var(--ink)
     }
-
+/* ==== Ocean network background ==== */
+#ocean-net{
+  position: fixed; inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .18; /* subtle */
+  filter: saturate(110%) contrast(105%);
+}
+@media (prefers-color-scheme: light){ #ocean-net{ opacity:.14; } }
+@media (prefers-reduced-motion: reduce){ #ocean-net{ display:none; } }
     /* Hero */
     .hero{
       position:relative; overflow:hidden;
@@ -288,7 +297,7 @@
   justify-content:center;
   margin-top:12px;
 }
-
+<canvas id="ocean-net" aria-hidden="true"></canvas>
 #reflect-in{
   width:min(720px,92vw);
   background:#0f1a28;
