@@ -569,7 +569,59 @@
         <img src="assets/avatar.jpg" alt="Photo of Sarah Carmody" loading="lazy">
       </figure>
     </div>
-
+// Ocean neural net background
+(()=>{ 
+  const cvs = document.getElementById('ocean-net'); if(!cvs) return;
+  const ctx = cvs.getContext('2d',{alpha:true});
+  let dpr = Math.min(2, window.devicePixelRatio || 1), W, H, pts=[], mouse={x:-9999,y:-9999};
+  const N = 75;                       // particle count
+  const LINK = 120;                   // link distance
+  const SPEED = .25;                  // particle speed
+  function resize(){ W = cvs.width = innerWidth*dpr; H = cvs.height = innerHeight*dpr; cvs.style.width=innerWidth+'px'; cvs.style.height=innerHeight+'px'; }
+  function spawn(){
+    pts = Array.from({length:N}, ()=>({ 
+      x: Math.random()*W, y: Math.random()*H, 
+      vx:(Math.random()-.5)*SPEED*dpr, vy:(Math.random()-.5)*SPEED*dpr
+    }));
+  }
+  function loop(){
+    ctx.clearRect(0,0,W,H);
+    // particles
+    for(const p of pts){
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0||p.x>W) p.vx*=-1;
+      if(p.y<0||p.y>H) p.vy*=-1;
+      ctx.beginPath(); ctx.arc(p.x,p.y,1.2*dpr,0,6.283); ctx.fillStyle='rgba(168,209,255,.7)'; ctx.fill();
+    }
+    // links
+    for(let i=0;i<N;i++){
+      for(let j=i+1;j<N;j++){
+        const a=pts[i], b=pts[j];
+        const dx=a.x-b.x, dy=a.y-b.y, d=Math.hypot(dx,dy);
+        if(d<LINK*dpr){
+          const alpha = (1 - d/(LINK*dpr)) * 0.35;
+          ctx.strokeStyle = `rgba(43,132,255,${alpha})`;
+          ctx.lineWidth = 0.6*dpr;
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+    }
+    // mouse gravity
+    if(mouse.x>0){
+      for(const p of pts){
+        const dx=mouse.x-p.x, dy=mouse.y-p.y, d=Math.hypot(dx,dy);
+        if(d<180*dpr){ p.vx-=dx*0.00003; p.vy-=dy*0.00003; }
+      }
+    }
+    requestAnimationFrame(loop);
+  }
+  addEventListener('mousemove',e=>{ mouse.x=e.clientX*dpr; mouse.y=e.clientY*dpr; },{passive:true});
+  addEventListener('mouseleave',()=>{ mouse.x=-9999; },{passive:true});
+  addEventListener('resize',()=>{ resize(); spawn(); },{passive:true});
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    resize(); spawn(); loop();
+  }
+})();
     <div class="sig-grid">
       <div class="sig-cell">
         <div class="sig-label">Location</div>
