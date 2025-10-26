@@ -832,7 +832,7 @@ animation: ambientGlow 6s ease-in-out infinite; /* gentle breathing glow */
   if(!headerEl) return;
 
   const onScroll = () => {
-    const scrolled = window.scrollY > 12;
+    const scrolled = window.scrollY > window.innerHeight * 0.05;
     headerEl.classList.toggle('scrolled', scrolled);
   };
 
