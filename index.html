@@ -212,6 +212,17 @@
       filter:saturate(105%) contrast(105%) brightness(.85);
       opacity:.5;
     }
+    /* Parallax layers & magnetic buttons */
+.hero { perspective: 900px; }
+.hero .wrap { will-change: transform; transition: transform .25s ease; }
+.cta, .cta.ghost { position: relative; overflow: hidden; }
+.cta::after, .cta.ghost::after{
+  content:""; position:absolute; inset:-1px;
+  border-radius: inherit; pointer-events:none;
+  background: radial-gradient(120px 80px at var(--mx,50%) var(--my,50%), rgba(46,139,255,.35), transparent 60%);
+  opacity:0; transition: opacity .25s ease;
+}
+.cta:hover::after, .cta.ghost:hover::after{ opacity:1; }
     .hero-mask{
       position:absolute; inset:0; z-index:-1;
       background:
