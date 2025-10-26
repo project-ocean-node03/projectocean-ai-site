@@ -591,6 +591,23 @@
           el.scrollIntoView({behavior:'smooth', block:'start'});
         }
       });
+      el.scrollIntoView({behavior:"smooth"});
+  }
+ });
+});
+
+// ⬇️ Paste the Reflection Script right here (around line 594–595)
+document.getElementById('reflect-btn')?.addEventListener('click', ()=>{
+  const v = (document.getElementById('reflect-in').value||'').trim();
+  const out = document.getElementById('reflect-out');
+  if(!v){ out.textContent = ''; return; }
+  const tone = /overwhelm|anxious|worried|stress/i.test(v) ? 'grounding' :
+               /excited|proud|happy|grateful/i.test(v) ? 'amplifying' : 'balanced';
+  out.textContent = `Ocean notes a ${tone} signal and would store a private, time-indexed entry: “${v}”.`;
+});
+</script>
+</body>
+</html>
     });
   </script>
 </body>
