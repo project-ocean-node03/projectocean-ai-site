@@ -236,6 +236,25 @@
   color: transparent;           /* uses the gradient */
   text-shadow: 0 6px 40px rgba(117,181,255,.22);
         .hero h1 {
+          /* ✨ Hero Glow + Aura Overlay */
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  animation: ambientGlow 6s ease-in-out infinite;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(60% 60% at 30% 30%, rgba(43,132,255,.25) 0%, transparent 70%),
+    radial-gradient(50% 70% at 70% 70%, rgba(117,181,255,.2) 0%, transparent 80%);
+  filter: blur(90px);
+  opacity: .6;
+  z-index: -1;
+}
   background: linear-gradient(180deg, #eaf3ff 0%, #a8d1ff 60%, #75b5ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
