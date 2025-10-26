@@ -826,7 +826,7 @@ animation: ambientGlow 6s ease-in-out infinite; /* gentle breathing glow */
   }
   50% { 
     box-shadow: 0 0 90px rgba(43,132,255,.18) inset; }
-  // Ocean nav glow on scroll
+  const scrolled = window.scrollY > window.innerHeight * 0.05;
 (() => {
   const headerEl = document.querySelector('header');
   if(!headerEl) return;
