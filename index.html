@@ -256,6 +256,30 @@
     .cta.ghost{
       background:#0f1a28; border:1px solid #2b84ff55; color:var(--ink)
     }
+    /* Navigation layout */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px;
+  position: relative;
+  z-index: 10;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #eaf3ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-links a:hover {
+  color: var(--glow-cyan);
+}
 /* ==== Ocean network background ==== */
 #ocean-net{
   position: fixed; inset: 0;
