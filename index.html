@@ -205,6 +205,53 @@
   background: radial-gradient(circle at top, #0b1220, #06080a);
   color: #e8eefc;
 }
+    /* Top nav */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.20));
+  backdrop-filter: saturate(140%) blur(10px);
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;   /* add this */
+  gap: 16px;                       /* add this */
+  padding: 12px 20px;              /* or keep your 18px 0 style */
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:800;
+  letter-spacing:.5px;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.nav-links a{
+  color:#eaf3ff;
+  text-decoration:none;
+  font-weight:500;
+  opacity:.9;
+}
+
+.nav-links a:hover{
+  opacity:1;
+  text-decoration:underline;
+  text-underline-offset: 4px;
+}
 .diagram img {
   max-width: 90%;
   border-radius: 12px;
