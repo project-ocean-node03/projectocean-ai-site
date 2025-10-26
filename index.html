@@ -255,6 +255,35 @@
     }
     /* Parallax layers & magnetic buttons */
 .hero { perspective: 900px; }
+    /* 🌊 Neon aura for buttons & logo */
+.cta, .cta.ghost, .brand, .orb {
+  position: relative;
+  isolation: isolate;
+}
+.cta::before, .cta.ghost::before, .brand::before, .orb::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background:
+    radial-gradient(40% 60% at 20% 30%, #2b84ff66 0%, transparent 60%),
+    radial-gradient(60% 40% at 80% 70%, #76c7ff55 0%, transparent 60%);
+  filter: blur(18px);
+  opacity: .85;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity .25s ease, filter .25s ease;
+}
+.cta:hover::before, .cta.ghost:hover::before {
+  filter: blur(24px);
+  opacity: 1;
+}
+
+/* 🌐 Ambient glow animation */
+@keyframes ambientGlow {
+  0%,100% { box-shadow: 0 0 0 rgba(43,132,255,0); }
+  50%     { box-shadow: 0 0 90px rgba(43,132,255,.18) inset; }
+}
 .hero .wrap { will-change: transform; transition: transform .25s ease; }
 .cta, .cta.ghost { position: relative; overflow: hidden; }
 .cta::after, .cta.ghost::after{
