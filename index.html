@@ -264,6 +264,50 @@
   font-size: clamp(34px, 6vw, 64px);
   line-height:1.05; margin:12px 0 0;
 }
+      /* === CTA Neon Aura (synced to hero glow) === */
+.cta, .cta.ghost {
+  position: relative;
+  isolation: isolate;              /* keep glow contained */
+  transform: translateZ(0);        /* GPU nudge */
+}
+
+/* Aura layer under the button */
+.cta::before, .cta.ghost::before {
+  content:"";
+  position:absolute; inset:-6px;
+  border-radius: inherit;
+  background:
+    radial-gradient(40% 60% at 20% 30%, var(--glow) 0%, transparent 60%),
+    radial-gradient(60% 40% at 80% 70%, var(--glow-cyan) 0%, transparent 60%);
+  filter: blur(18px);
+  opacity:.9;
+  z-index:-1;
+  pointer-events:none;
+  transition: opacity .25s ease, filter .25s ease, transform .15s ease;
+  animation: glowShift 14s ease-in-out infinite;   /* <- SAME keyframes as hero */
+}
+
+.cta:hover::before, .cta.ghost:hover::before {
+  filter: blur(24px);
+  opacity: 1;
+}
+
+/* Micro motion on hover (pairs with your magnetic JS) */
+.cta:hover, .cta.ghost:hover {
+  translate: 0 -1px;
+}
+
+/* Keyboard focus: visible + elegant */
+.cta:focus-visible, .cta.ghost:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--glow) 45%, transparent),
+              0 0 0 6px color-mix(in oklab, #0b1220 80%, transparent);
+}
+
+/* Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .cta::before, .cta.ghost::before { animation: none; }
+}
   /* motion + glow */
   background-size:200% 200%;
   animation:titleGlow 8s ease-in-out infinite;
