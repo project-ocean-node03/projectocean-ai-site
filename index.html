@@ -1,4 +1,4 @@
-<!doctype html>
+(<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -279,6 +279,41 @@
     <p id="reflect-out" class="muted" style="margin-top:12px;"></p>
   </div>
 </section>
+    /* === Reflection (mini demo) === */
+.reflect .wrap{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+  margin-top:12px;
+}
+
+#reflect-in{
+  width:min(720px,92vw);
+  background:#0f1a28;
+  color:var(--ink);
+  border:1px solid #2b84ff22;
+  border-radius:12px;
+  padding:14px 16px;
+  font:500 16px/1.3 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  outline:none;
+  transition:box-shadow .25s ease,border-color .25s ease,background .25s ease;
+  box-shadow:inset 0 6px 22px rgba(0,0,0,.25);
+}
+
+#reflect-in:focus{
+  border-color:#2b84ff;
+  box-shadow:0 0 0 3px rgba(43,132,255,.25),inset 0 6px 22px rgba(0,0,0,.25);
+}
+
+#reflect-btn{
+  margin-left:12px;
+}
+
+@media (max-width:600px){
+  #reflect-btn{display:block;margin:12px 0 0 0;width:100%;}
+}
     /* Carousel (scroll-snap) */
     .carousel{
       display:grid; grid-auto-flow:column; gap:16px;
