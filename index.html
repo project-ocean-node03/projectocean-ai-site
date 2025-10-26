@@ -278,6 +278,22 @@
       filter:saturate(105%) contrast(105%) brightness(.85);
       opacity:.5;
     }
+    /* ——— Living glow under the hero ——— */
+.hero::before{
+  content:"";
+  position:absolute; inset:-20%;
+  z-index:0; /* sits under hero content */
+  background:
+    radial-gradient(60% 80% at 70% 30%, rgba(118,199,255,.18), transparent 60%),
+    radial-gradient(70% 60% at 25% 70%, rgba(43,132,255,.22), transparent 60%),
+    conic-gradient(from 0deg, #0b111a, #102c4f, #0b111a);
+  filter: blur(40px) saturate(140%) contrast(110%);
+  opacity:.6;
+  animation:oceanShift 26s ease-in-out infinite alternate;
+}
+
+/* make sure the background image layer stays behind everything */
+.hero-bg{ z-index:-1; }
     /* Parallax layers & magnetic buttons */
 .hero { perspective: 900px; }
     /* 🌊 Neon aura for buttons & logo */
