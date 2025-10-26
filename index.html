@@ -179,6 +179,12 @@
   color: #e8eefc;
 }
     /* Top nav */
+    header{
+  position: sticky; top: 0; z-index: 1000; width:100%;
+  opacity: 0; transform: translateY(-10px);
+  animation: navEnter .6s ease-out .2s forwards;
+  ...
+      }
     /* Top nav — Ocean shimmer */
 header{
   position: sticky; top: 0; z-index: 1000; width:100%;
@@ -820,6 +826,20 @@ animation: ambientGlow 6s ease-in-out infinite; /* gentle breathing glow */
   }
   50% { 
     box-shadow: 0 0 90px rgba(43,132,255,.18) inset; }
+  // Ocean nav glow on scroll
+(() => {
+  const headerEl = document.querySelector('header');
+  if(!headerEl) return;
+
+  const onScroll = () => {
+    const scrolled = window.scrollY > 12;
+    headerEl.classList.toggle('scrolled', scrolled);
+  };
+
+  // run once and then on scroll
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
 }
 
 .hero, .section-dark, .poster {
