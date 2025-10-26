@@ -369,7 +369,38 @@ animation: ambientGlow 6s ease-in-out infinite; /* gentle breathing glow */
   filter: blur(24px);
   opacity: 1;
 }
+@keyframes titleGlow {
+  0%,100% {
+    background-position:0% 0%;
+    text-shadow:0 6px 24px rgba(117,181,255,.30);
+  }
+  50% {
+    background-position:100% 100%;
+    text-shadow:0 10px 52px rgba(118,199,255,.55);
+  }
+}
 
+@keyframes glowShift {
+  0%, 100% { --glow: rgba(43,132,255,0.45); }
+  50%      { --glow: rgba(0,224,255,0.55); }
+}
+
+/* Optional ambient breathing for the whole hero */
+@keyframes oceanShift {
+  0%   { transform: translate3d(-2%,-1%,0) rotate(0deg) scale(1.02); }
+  50%  { transform: translate3d(1%, 2%,0) rotate(180deg) scale(1.05); }
+  100% { transform: translate3d(3%,-2%,0) rotate(360deg) scale(1.02); }
+}
+
+@keyframes ambientGlow {
+  0%,100% { box-shadow: 0 0 0 rgba(43,132,255,0); }
+  50%     { box-shadow: 0 0 90px rgba(43,132,255,.18) inset; }
+}
+
+/* Accessibility: disable motion if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .hero h1 { animation: none; }
+}
 /* 🌐 Ambient glow animation */
 @keyframes ambientGlow {
   0%,100% { box-shadow: 0 0 0 rgba(43,132,255,0); }
