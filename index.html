@@ -800,6 +800,30 @@
       <span class="dot">•</span>
       <span>Palo Alto, California</span>
     </div>
+  // Reflection demo (tidy)
+document.getElementById('reflect-btn')?.addEventListener('click', ()=>{
+  const v = document.getElementById('reflect-in');
+  const out = document.getElementById('reflect-out');
+  if(!v || !out) return;
+
+  const text = (v.value || '').trim();
+  if(!text){
+    out.textContent = '';
+    return;
+  }
+
+  const toneMap = [
+    [/overwhelm|anxious|worry|stressed|tired/i, 'gentle'],
+    [/sad|down|lonely|blue/i, 'caring'],
+    [/angry|mad|furious|upset/i, 'calm'],
+    [/excited|proud|happy|joy|stoked/i, 'celebratory'],
+    [/focus|ship|build|work|plan/i, 'steady']
+  ];
+  const match = toneMap.find(([re])=>re.test(text));
+  const toneWord = match ? match[1] : 'curious';
+
+  out.textContent = `Ocean notes a ${toneWord} tone. “${text}”`;
+});
   </footer>
 
   <!-- LIGHTBOX -->
