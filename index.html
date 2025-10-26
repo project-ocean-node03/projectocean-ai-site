@@ -314,6 +314,19 @@
 @media (max-width:600px){
   #reflect-btn{display:block;margin:12px 0 0 0;width:100%;}
 }
+    /* === Reflection Pulse Animation === */
+@keyframes oceanPulse {
+  0%, 100% {
+    box-shadow: 0 0 0px rgba(43,132,255,0.15), inset 0 6px 22px rgba(0,0,0,.25);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(43,132,255,0.4), inset 0 6px 22px rgba(0,0,0,.25);
+  }
+}
+
+#reflect-in {
+  animation: oceanPulse 4s ease-in-out infinite;
+}
     /* Carousel (scroll-snap) */
     .carousel{
       display:grid; grid-auto-flow:column; gap:16px;
