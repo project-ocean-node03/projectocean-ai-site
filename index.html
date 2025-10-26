@@ -820,7 +820,21 @@
       entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show'); });
     }, {threshold:.12});
     document.querySelectorAll('.fade').forEach(el=>io.observe(el));
-
+// Magnetic CTA hover (subtle)
+document.querySelectorAll('.cta, .cta.ghost').forEach(btn=>{
+  const strength = 24;
+  btn.style.transition = 'transform .15s ease';
+  btn.addEventListener('mousemove', (e)=>{
+    const r = btn.getBoundingClientRect();
+    const x = e.clientX - (r.left + r.width/2);
+    const y = e.clientY - (r.top + r.height/2);
+    btn.style.transform = `translate(${x/strength}px, ${y/strength}px)`;
+  });
+  btn.addEventListener('mouseleave', ()=>{
+    btn.style.transform = 'translate(0,0)';
+  });
+});
+    
     // Lightbox for gallery
     const lb = document.getElementById('lightbox');
     const lbImg = lb.querySelector('img');
