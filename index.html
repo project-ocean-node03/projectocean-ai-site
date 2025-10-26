@@ -229,14 +229,20 @@
 @media (prefers-reduced-motion: reduce){ #ocean-net{ display:none; } }
     /* Hero */
     .hero{
-      .hero h1 {
-  background: linear-gradient(180deg, #eaf3ff 0%, #a8d1ff 60%, #75b5ff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;           /* uses the gradient */
-  text-shadow: 0 6px 40px rgba(117,181,255,.22);
-        .hero h1 {
-          /* ✨ Hero Glow + Aura Overlay */
+.hero h1{
+  /* animated gradient ink */
+  background: linear-gradient(180deg,#eaf3ff 0%,#8ec5ff 60%,#eaf3ff 100%);
+  -webkit-background-clip:text; background-clip:text;
+  color: transparent;
+
+  /* motion + glow */
+  background-size:200% 200%;
+  animation:titleGlow 8s ease-in-out infinite;
+  text-shadow:0 6px 40px rgba(117,181,255,.35);
+
+  font-size: clamp(34px, 6vw, 64px);
+  line-height:1.05; margin:12px 0 0;
+}
 .hero {
   position: relative;
   overflow: hidden;
