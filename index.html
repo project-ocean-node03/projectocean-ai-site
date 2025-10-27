@@ -477,10 +477,7 @@ animation: ambientGlow 6s ease-in-out infinite; /* gentle breathing glow */
   0%, 100% { --glow: rgba(43,132,255,0.45); }
   50%      { --glow: rgba(0,224,255,0.55); }
 }
-.hero .wrap { will-change: transform; transition: transform .25s ease; }
-.cta, .cta.ghost { position: relative; overflow: hidden; }
-.cta::after, .cta.ghost::after{
-  content:""; position:absolute; inset:-1px;
+.
   border-radius: inherit; pointer-events:none;
   background: radial-gradient(120px 80px at var(--mx,50%) var(--my,50%), rgba(46,139,255,.35), transparent 60%);
   opacity:0; transition: opacity .25s ease;
@@ -502,21 +499,13 @@ animation: ambientGlow 6s ease-in-out infinite; /* gentle breathing glow */
 }
 
 @keyframes titleGlow{
-  0%,100%{
-    background-position:0% 0%;
-    text-shadow:0 6px 24px rgba(117,181,255,.30);
-  }
-  @keyframes oceanShift{
+
   0%   { transform: translate3d(-2%,-1%,0) rotate(0deg)   scale(1.02); }
   50%  { transform: translate3d( 1%, 2%,0) rotate(180deg) scale(1.05); }
   100% { transform: translate3d( 3%,-2%,0) rotate(360deg) scale(1.02); }
 }
 
-@keyframes titleGlow{
-  0%,100%{
-    background-position:0% 0%;
-    text-shadow:0 6px 24px rgba(117,181,255,.30);
-  }
+
   50%{
     background-position:100% 100%;
     text-shadow:0 10px 52px rgba(118,199,255,.55);
