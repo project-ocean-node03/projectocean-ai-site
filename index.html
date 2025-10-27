@@ -1,1186 +1,539 @@
-(<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <!-- Open Graph / Social Preview -->
-<meta property="og:title" content="Project Ocean — Humanity’s Next Wave of Intelligence" />
-<meta property="og:description" content="To guide humanity’s evolution toward emotionally-aware intelligence — where memory is private, agency is respected, and alignment is earned." />
-<meta property="og:image" content="assets/og-cover.webp" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.projectocean.ai" />
-<meta name="twitter:card" content="summary_large_image" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project Ocean — Humanity’s next wave of intelligence</title>
-  <!-- Open Graph Meta -->
-<meta property="og:title" content="Project Ocean — Humanity’s Next Wave of Intelligence">
-<meta property="og:description" content="Emotionally-aware AI. Privacy-first. Memory under your control.">
-<meta property="og:image" content="assets/og-cover.webp">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://projectocean.dev">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="assets/og-cover.webp">
-<meta name="twitter:title" content="Project Ocean — Humanity’s Next Wave of Intelligence">
-<meta name="twitter:description" content="Emotionally-aware AI. Privacy-first. Memory under your control.">
-  <meta name="description" content="Emotionally-aware, privacy-first intelligence. A sovereignty layer where memory is private, agency is respected, and alignment is earned." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>NEON//OMEGA — Hyperreal Systems</title>
+  <meta name="theme-color" content="#00eaff" />
+  <meta name="description" content="A gloriously over-the-top hi-tech landing page. Neon. Particles. Parallax. Vibes." />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Project Ocean — Humanity’s next wave of intelligence" />
-  <meta property="og:description" content="Emotionally-aware, privacy-first intelligence. Your Memory. Your Control." />
+  <!-- Social preview (optional; uses the hero gradient if image missing) -->
+  <meta property="og:title" content="NEON//OMEGA — Hyperreal Systems" />
+  <meta property="og:description" content="A gloriously over-the-top hi-tech landing page. Neon. Particles. Parallax. Vibes." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og-cover.jpg" /> <!-- Optional: set a social share image -->
-  <meta name="theme-color" content="#0a0f16"/>
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <style>
+    /* ====== Root Theme Vars ====== */
     :root{
-  --bg:#070b12;
-  --bg-2:#0b111a;
-  --ink:#eaf3ff;
-  --muted:#97a9c6;
-  --brand:#4ea1ff;
-  --glow:#2b84ff55;
-  --card:#0e1621;
-  --accent:#a8d1ff;
-  --ring:#2b84ff;
-  --link:#8bd0ff;
-  --success:#5bff91;
-  --shadow: 0 20px 60px rgba(0,0,0,.45);
-  --glow: rgba(43,132,255,0.45);       /* ocean blue core */
-  --glow-cyan: rgba(0,224,255,0.45);   /* electric cyan accent */
+      --bg:#040911;
+      --bg-2:#070d18;
+      --ink:#eaf3ff;
+      --muted:#9ab0cc;
+      --brand:#00eaff;
+      --brand-2:#7b5cff;
+      --glow:rgba(43,132,255,.55);
+      --ring:#2b84ff;
+      --card:#0a1020;
+      --good:#36fba1;
+      --bad:#ff4466;
+      --shadow:0 20px 60px rgba(0,0,0,.45);
+      --radius:16px;
     }
-   .hero {
-  position: relative;
-  text-align: center;
-  color: #e8edf3;
-  padding: 100px 20px;
-  background: radial-gradient(circle at top, #0a0f16, #000);
-}
-
-.hero-image {
-  width: 100%;
-  left: 0;
-  z-index: 0;
-  object-fit: cover;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
-  backdrop-filter: blur(3px);
-  padding: 1rem;
-  border-radius: 10px;
-}
-:root {
-  --glow: rgba(43,132,255,0.45);
-  --glow-cyan: rgba(0,224,255,0.45);
-}
-.cta-button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 28px;
-  background-color: #007bff;
-  border-radius: 6px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #3399ff;
-}
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#0b1220; --bg-2:#0f172a; }
     }
-    
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body {
-  margin: 0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  background: radial-gradient(1200px 800px at 20% -10%, rgba(43,132,255,.10), transparent),
-              radial-gradient(1000px 700px at 110% -10%, rgba(43,132,255,.08), transparent),
-              var(--bg);
-  color: var(--ink);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-    }    
-    <!-- === Header Navigation === -->
-<header>
-  <nav class="nav">
-    <a class="brand" href="/">
-      <img src="assets/logo.svg" alt="Project Ocean">
-    </a>
 
-    <ul class="nav-links">
-      <li><a href="#mission">Mission</a></li>
-      <li><a href="#architecture">Architecture</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <a class="cta" href="#invest">Request Investor Access</a>
-  </nav>
-
-  <canvas id="ocean-net" aria-hidden="true"></canvas>
-  <section class="hero">
-  <picture>
-  <source srcset="assets/hero.webp" type="image/webp">
-  <source srcset="assets/hero.jpg" type="image/jpeg">
-  <img src="assets/hero.jpg" alt="Project Ocean Hero Image" class="hero-image" loading="lazy">
-</picture>
-  <div class="hero-content">
-    <h1>Humanity’s next wave of intelligence.</h1>
-    <p>To guide the world’s evolution toward emotionally-aware intelligence — 
-    where <strong>memory is private</strong>, <strong>agency is respected</strong>, 
-    and <strong>alignment is earned.</strong></p>
-    <a href="#request-access" class="cta-button">Request Private Preview</a>
-  </div>
-</section>
-    <!-- Mission Section -->
-<section id="mission" class="bg-gradient-to-b from-[#021B33] to-[#0E4C5F] py-24 px-8 md:px-16 text-center text-white">
-  <h2 class="text-3xl md:text-4xl font-semibold mb-6">
-    Guiding the World’s Evolution Toward Emotionally-Aware Intelligence
-  </h2>
-  <p class="max-w-4xl mx-auto text-lg opacity-80 leading-relaxed">
-    Project Ocean is a sovereignty layer for humans and AI — where memory is private,
-    agency is respected, and alignment is earned. We’re building technology that honors the human spirit while advancing the next wave of intelligence.
-  </p>
-    <section class="diagram">
-  <h2>Architecture Overview</h2>
-  <p>The foundation of Project Ocean — a Human–AI synergy framework built on trust, continuity, and emotional intelligence.</p>
-  <img src="assets/architecture-diagram.png" alt="Project Ocean Architecture Diagram">
-    .diagram {
-  text-align: center;
-  padding: 60px 20px;
-  background: radial-gradient(circle at top, #0b1220, #06080a);
-  color: #e8eefc;
-}
-    /* Top nav */
-    header{
-  position: sticky; top: 0; z-index: 1000; width:100%;
-  opacity: 0; transform: translateY(-10px);
-  animation: navEnter .6s ease-out .2s forwards;
-  ...
-      }
-    /* Top nav — Ocean shimmer */
-header{
-  position: sticky; top: 0; z-index: 1000; width:100%;
-  /* entry fade */
-  opacity: 0; transform: translateY(-10px);
-  animation: navEnter .6s ease-out .2s forwards;
-
-  /* subtle base so content shows through */
-  background: rgba(7,11,18,.40);
-  backdrop-filter: saturate(140%) blur(4px);
-  -webkit-backdrop-filter: saturate(140%) blur(4px);
-  transition: background .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;
-}
-
-/* When scrolled a bit, deepen the glass and add glow edge */
-header.scrolled{
-  background: rgba(7,11,18,.72);
-  backdrop-filter: saturate(150%) blur(10px);
-  -webkit-backdrop-filter: saturate(150%) blur(10px);
-  box-shadow:
-    0 10px 40px rgba(0,0,0,.35),
-    inset 0 -1px 0 #2b84ff33,
-    0 0 0 1px #2b84ff22;
-}
-
-/* nav layout */
-.nav{
-  display:flex; align-items:center; justify-content:space-between;
-  gap: 18px; padding: 14px 20px;
-}
-
-/* brand logo + pulse */
-.brand img, .brand{
-  display:flex; align-items:center; gap:10px; height: 28px;
-  filter: drop-shadow(0 0 10px var(--glow));
-  animation: logoPulse 4s ease-in-out infinite;
-  color: var(--ink); text-decoration:none;
-}
-
-/* links */
-.nav-links{ display:flex; gap:18px; list-style:none; margin:0; padding:0; }
-.nav-links a{
-  color: var(--ink); text-decoration:none; font-weight: 500;
-  position: relative; padding: 6px 8px;
-}
-.nav-links a::after{
-  content:""; position:absolute; left:0; right:0; bottom:2px; height:2px;
-  background: linear-gradient(90deg, transparent, #76c7ff, transparent);
-  transform: scaleX(0); transform-origin:left;
-  transition: transform .35s ease;
-}
-.nav-links a:hover::after{ transform: scaleX(1); }
-
-/* CTA button in nav */
-.nav .cta{
-  display:inline-flex; align-items:center; gap:8px;
-  padding:10px 16px; border-radius:999px;
-  color:#fff; font-weight:600; text-decoration:none;
-  background: linear-gradient(180deg,#2b84ff,#1150cc);
-  box-shadow: 0 8px 28px #1150cc55,inset 0 0 0 1px #ffffff22;
-  transition: transform .12s ease, box-shadow .2s ease;
-}
-.nav .cta:hover{ transform: translateY(-1px); box-shadow: 0 12px 36px #1150cc66,inset 0 0 0 1px #ffffff33; }
-
-/* shimmering light sweep across the whole nav */
-.nav::after{
-  content:""; position:absolute; inset:0 0 auto 0; height:100%;
-  background: linear-gradient(110deg, transparent 35%, #9ad5ff33 50%, transparent 65%);
-  pointer-events:none; mix-blend-mode:screen; opacity:.0;
-  animation: shimmerSweep 8s linear infinite;
-}
-
-/* keyframes */
-@keyframes navEnter{ to{ opacity:1; transform:none; } }
-@keyframes logoPulse{
-  0%,100%{ filter: drop-shadow(0 0 8px var(--glow)); }
-  50%{    filter: drop-shadow(0 0 16px var(--glow)); }
-}
-@keyframes shimmerSweep{
-  0%{ opacity:.0; transform: translateX(-40%); }
-  10%{ opacity:.25; }
-  40%{ opacity:.25; transform: translateX(40%); }
-  60%{ opacity:.0; }
-  100%{ transform: translateX(120%); }
-}
-
-/* prefers-reduced-motion: no flashy stuff */
-@media (prefers-reduced-motion: reduce){
-  header{ animation:none; }
-  .brand{ animation:none; }
-  .nav::after{ display:none; }
-}
-    /* Top nav */
-
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;   /* add this */
-  gap: 16px;                       /* add this */
-  padding: 12px 20px;              /* or keep your 18px 0 style */
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  
-    header{
-      position:sticky; top:0; z-index:40;
-      background:linear-gradient(180deg, rgba(7,11,18,.9), rgba(7,11,18,.6) 70%, transparent);
-      backdrop-filter:saturate(140%) blur(6px);
+    /* ====== Reset-ish ====== */
+    * { box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
       color:var(--ink);
+      font: 500 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(0,234,255,.08), transparent 60%),
+        radial-gradient(1200px 800px at 10% 120%, rgba(123,92,255,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
     }
-    .orb{
-      width:20px; height:20px; border-radius:50%;
-      background: radial-gradient(circle at 35% 30%, #97d2ff 0%, #2b84ff 45%, #153a6b 70%, #091220 100%);
-      box-shadow:0 0 24px #7fc4ffaa, 0 0 60px #2b84ff66;
-      animation:throb 4.5s ease-in-out infinite;
-    }
-    /* Neon aura upgrades */
-.cta, .cta.ghost, .brand, .orb {
-  position: relative;
-  isolation: isolate;
 
-  filter: blur(24px);
-  opacity:1;
-}
-    @keyframes throb{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+    a{ color:var(--brand); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{ width:min(1200px, 92vw); margin-inline:auto; }
+
+    /* ====== Header / Nav ====== */
+    header{
+      position: sticky; top:0; z-index:1000;
+      background: rgba(6,12,22,.35);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid rgba(43,132,255,.25);
+      box-shadow: inset 0 0 0 1px rgba(123,92,255,.08);
+      opacity:0; transform: translateY(-8px);
+      animation: navIn .6s ease-out forwards;
+    }
+    @keyframes navIn{ to{ opacity:1; transform:none; } }
+
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+    .brand{ display:flex; gap:12px; align-items:center; color:var(--ink); text-decoration:none; font-weight:800; letter-spacing:.4px; }
+    .brand .logo{
+      width:26px; height:26px; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, #00eaff, #7b5cff 60%, #111 62%);
+      box-shadow:
+        0 0 24px rgba(0,234,255,.55),
+        0 0 48px rgba(123,92,255,.45);
+      animation: pulse 4s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{ filter: drop-shadow(0 0 6px var(--glow)); }
+      50%{ filter: drop-shadow(0 0 18px var(--glow)); }
+    }
+
+    .nav-links{ display:flex; gap:28px; list-style:none; margin:0; padding:0; }
+    .nav-links a{
+      color:var(--ink); opacity:.9; position:relative; padding:6px 0;
+    }
+    .nav-links a::after{
+      content:""; position:absolute; inset:auto 0 -2px 0; height:2px;
+      background: linear-gradient(90deg, transparent, var(--brand), var(--brand-2), transparent);
+      transform: scaleX(0); transform-origin:center; transition: transform .35s ease;
+    }
+    .nav-links a:hover::after{ transform: scaleX(1); }
 
     .cta{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      background:linear-gradient(180deg, #1977ff, #125fe3);
-      color:#fff; font-weight:600; border-radius:12px; padding:14px 18px;
-      box-shadow:0 8px 28px #1150cc55, inset 0 0 0 1px #a8d1ff22;
-      transition:transform .12s ease, box-shadow .2s ease;
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 16px; border-radius:999px; color:#06111d; font-weight:750;
+      background: linear-gradient(180deg, #00eaff, #7b5cff);
+      box-shadow: 0 8px 28px #1150cc55, inset 0 0 1px #fff8;
+      border:0; cursor:pointer; text-decoration:none;
+      transition: transform .12s ease, box-shadow .2s ease;
+      position:relative; isolation:isolate;
     }
-    .cta:hover{transform:translateY(-1px); box-shadow:0 10px 36px #1150cc66}
-    .cta.ghost{
-      background:#0f1a28; border:1px solid #2b84ff55; color:var(--ink)
-    }
-    /* Navigation layout */
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 48px;
-  position: relative;
-  z-index: 10;
-}
-    .hero{
-
-.hero h1{
-  background: linear-gradient(180deg,#eaf3ff 0%,#8ec5ff 60%,#eaf3ff 100%);
-  -webkit-background-clip:text; background-clip:text;
-  color: transparent;
-  background-size:200% 200%;
-  animation: titleGlow 8s ease-in-out infinite,
-             glowShift 14s ease-in-out infinite;
-  text-shadow: 0 0 24px var(--glow),
-               0 10px 60px rgba(0,80,160,.35);
-  font-size: clamp(34px, 6vw, 64px);
-  line-height:1.05; margin:12px 0 0;
-}
-      /* === CTA Neon Aura (synced to hero glow) === */
-.cta, .cta.ghost {
-  position: relative;
-  isolation: isolate;              /* keep glow contained */
-  transform: translateZ(0);        /* GPU nudge */
-}
-
-/* Aura layer under the button */
-.cta::before, .cta.ghost::before {
-  content:"";
-  position:absolute; inset:-6px;
-  border-radius: inherit;
-  background:
-    radial-gradient(40% 60% at 20% 30%, var(--glow) 0%, transparent 60%),
-    radial-gradient(60% 40% at 80% 70%, var(--glow-cyan) 0%, transparent 60%);
-  filter: blur(18px);
-  opacity:.9;
-  opacity: 1;
-}
-
-/* Micro motion on hover (pairs with your magnetic JS) */
-.cta:hover, .cta.ghost:hover {
-  translate: 0 -1px;
-}
-
-/* Keyboard focus: visible + elegant */
-.cta:focus-visible, .cta.ghost:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px color-mix(in oklab, var(--glow) 45%, transparent),
-              0 0 0 6px color-mix(in oklab, #0b1220 80%, transparent);
-}
-
-/* Respect motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .cta::before, .cta.ghost::before { animation: none; }
-}
-  /* motion + glow */
-  background-size:200% 200%;
-  animation:titleGlow 8s ease-in-out infinite;
-  text-shadow:0 6px 40px rgba(117,181,255,.35);
-
-  font-size: clamp(34px, 6vw, 64px);
-  line-height:1.05; margin:12px 0 0;
-}
-      /* Add to your existing .hero { ... } */
-position: relative;
-overflow: hidden;
-isolation: isolate;           /* keeps glow layers contained */
-perspective: 900px;           /* enables subtle 3D for child tilt */
-animation: ambientGlow 6s ease-in-out infinite; /* gentle breathing glow */
-.hero {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  animation: ambientGlow 6s ease-in-out infinite;
-}
-/* Living glow layer under the hero */
-.hero::before{
-  content:"";
-  position:absolute; inset:-20%;
-  z-index:0; /* sits under hero content */
-  background:
-    radial-gradient(60% 80% at 70% 30%, rgba(118,199,255,.18), transparent 60%),
-    radial-gradient(70% 60% at 25% 70%, rgba(43,132,255,.22), transparent 60%),
-    conic-gradient(from 0deg, #0b111a, #102c4f, #0b111a);
-  filter: blur(40px) saturate(140%) contrast(110%);
-  opacity:.6;
-  animation:oceanShift 26s ease-in-out infinite alternate;
-}
-
-/* keep your background image layer behind everything if you have .hero-bg */
-.hero-bg{ z-index:-1; }
-    /* ——— Living glow under the hero ——— */
-.hero::before{
-  content:"";
-  position:absolute; inset:-20%;
-  z-index:0; /* sits under hero content */
-  background:
-    radial-gradient(60% 80% at 70% 30%, rgba(118,199,255,.18), transparent 60%),
-    radial-gradient(70% 60% at 25% 70%, rgba(43,132,255,.22), transparent 60%),
-    conic-gradient(from 0deg, #0b111a, #102c4f, #0b111a);
-  filter: blur(40px) saturate(140%) contrast(110%);
-  opacity:.6;
-  animation:oceanShift 26s ease-in-out infinite alternate;
-}
-
-/* make sure the background image layer stays behind everything */
-.hero-bg{ z-index:-1; }
-    /* Parallax layers & magnetic buttons */
-.hero { perspective: 900px; }
-    /* 🌊 Neon aura for buttons & logo */
-.cta, .cta.ghost, .brand, .orb {
-  position: relative;
-  isolation: isolate;
-}
-.cta::before, .cta.ghost::before, .brand::before, .orb::before {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: inherit;
-  background:
-    radial-gradient(40% 60% at 20% 30%, #2b84ff66 0%, transparent 60%),
-    radial-gradient(60% 40% at 80% 70%, #76c7ff55 0%, transparent 60%);
-  filter: blur(18px);
-  opacity: .85;
-  z-index: -1;
-  pointer-events: none;
-  transition: opacity .25s ease, filter .25s ease;
-}
-.cta:hover::before, .cta.ghost:hover::before {
-  filter: blur(24px);
-  opacity: 1;
-}
-@keyframes titleGlow {
-  0%,100% {
-    background-position:0% 0%;
-    text-shadow:0 6px 24px rgba(117,181,255,.30);
-  }
-  50% {
-    background-position:100% 100%;
-    text-shadow:0 10px 52px rgba(118,199,255,.55);
-  }
-}
-
-@keyframes glowShift {
-  0%, 100% { --glow: rgba(43,132,255,0.45); }
-  50%      { --glow: rgba(0,224,255,0.55); }
-}
-
-/* Optional ambient breathing for the whole hero */
-@keyframes oceanShift {
-  0%   { transform: translate3d(-2%,-1%,0) rotate(0deg) scale(1.02); }
-  50%  { transform: translate3d(1%, 2%,0) rotate(180deg) scale(1.05); }
-  100% { transform: translate3d(3%,-2%,0) rotate(360deg) scale(1.02); }
-}
-
-@keyframes ambientGlow {
-  0%,100% { box-shadow: 0 0 0 rgba(43,132,255,0); }
-  50%     { box-shadow: 0 0 90px rgba(43,132,255,.18) inset; }
-}
-
-/* Accessibility: disable motion if user prefers reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .hero::before, .hero h1 { animation: none; }
-}
-
-@keyframes glowShift {
-  0%, 100% { --glow: rgba(43,132,255,0.45); }
-  50%      { --glow: rgba(0,224,255,0.55); }
-}
-.
-  border-radius: inherit; pointer-events:none;
-  background: radial-gradient(120px 80px at var(--mx,50%) var(--my,50%), rgba(46,139,255,.35), transparent 60%);
-  opacity:0; transition: opacity .25s ease;
-}
-.cta:hover::after, .cta.ghost:hover::after{ opacity:1; }
-    .hero-mask{
-      position:absolute; inset:0; z-index:-1;
+    .cta:hover{ transform: translateY(-1px); }
+    .cta:active{ transform: translateY(0); }
+    .cta::before{
+      content:""; position:absolute; inset:-6px; border-radius:inherit; z-index:-1; opacity:.85;
       background:
-        radial-gradient(800px 400px at 18% 10%, #1a2b4433, transparent 60%),
-        linear-gradient(180deg, rgba(7,11,18,.3), rgba(7,11,18,.85) 55%, var(--bg) 100%);
+        radial-gradient(40% 60% at 20% 30%, rgba(0,234,255,.35), transparent 60%),
+        radial-gradient(60% 40% at 80% 70%, rgba(123,92,255,.35), transparent 60%);
+      filter: blur(18px);
+      pointer-events:none;
+      transition: opacity .25s ease, filter .25s ease;
     }
-    .hero h1{
-      font-size: clamp(34px, 6vw, 64px);
-      line-height:1.05; margin:12px 0 16px; letter-spacing:.01em;
-      @keyframes oceanShift{
-  0%   { transform: translate3d(-2%,-1%,0) rotate(0deg)   scale(1.02); }
-  50%  { transform: translate3d( 1%, 2%,0) rotate(180deg) scale(1.05); }
-  100% { transform: translate3d( 3%,-2%,0) rotate(360deg) scale(1.02); }
-}
+    .cta:hover::before{ filter: blur(24px); opacity:1; }
 
-@keyframes titleGlow{
-
-  0%   { transform: translate3d(-2%,-1%,0) rotate(0deg)   scale(1.02); }
-  50%  { transform: translate3d( 1%, 2%,0) rotate(180deg) scale(1.05); }
-  100% { transform: translate3d( 3%,-2%,0) rotate(360deg) scale(1.02); }
-}
-
-
-  50%{
-    background-position:100% 100%;
-    text-shadow:0 10px 52px rgba(118,199,255,.55);
-  }
-}
-
-
-    
-/* motion accessibility */
-
-
-/* Accessibility: respect prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce){
-  .hero::before, .hero h1{ animation:none; }
-}
+    /* Mobile nav button */
+    .menu-btn{ display:none; background:none; border:0; color:var(--ink); }
+    @media (max-width: 860px){
+      .nav-links{ display:none; position:fixed; inset:66px 16px auto 16px; padding:16px; flex-direction:column; gap:16px; background:rgba(6,12,22,.85); border:1px solid rgba(43,132,255,.25); border-radius:var(--radius); box-shadow:var(--shadow); }
+      .menu-btn{ display:inline-flex; }
+      .nav.open .nav-links{ display:flex; }
     }
-    .hero p.lede{
-      color:var(--muted); max-width:880px; font-size: clamp(16px, 2.2vw, 20px)
-    }
-    .hero .buttons{display:flex; gap:12px; margin-top:26px; flex-wrap:wrap}
 
-    /* Section */
-    section{padding:72px 0}
-    h2{font-size: clamp(22px, 3.5vw, 36px); margin:0 0 14px}
-    .muted{color:var(--muted)}
+    /* ====== Hero ====== */
+    .hero{
+      position:relative; overflow:hidden; isolation:isolate;
+      padding: clamp(72px, 12vh, 120px) 0;
+      perspective: 900px;
+    }
+    /* particle canvas behind content */
+    .hero canvas{
+      position:absolute; inset:0; z-index:-2;
+      filter: saturate(120%) contrast(110%);
+      opacity:.55;
+    }
+
+    .hero .glow{
+      content:""; position:absolute; inset:-20%; z-index:-1;
+      background:
+        radial-gradient(60% 80% at 70% 30%, rgba(0,234,255,.25), transparent 60%),
+        radial-gradient(70% 60% at 25% 70%, rgba(123,92,255,.25), transparent 60%),
+        conic-gradient(from 0deg, #0b111a, #08101a, #0b111a);
+      filter: blur(40px) saturate(140%) contrast(110%);
+      animation:oceanShift 26s ease-in-out infinite;
+    }
+    @keyframes oceanShift{
+      0%   { transform: translate3d(-2%, -1%, 0) rotate(0.5deg) scale(1.02); }
+      50%  { transform: translate3d( 1%,  2%, 0) rotate(-0.5deg) scale(1.04); }
+      100% { transform: translate3d( 3%, -2%, 0) rotate(0deg)  scale(1.02); }
+    }
+
+    .hero .wrap{ display:grid; gap:26px; align-items:center; }
+    .eyebrow{ color:var(--brand); font-weight:700; letter-spacing:.2em; text-transform:uppercase; opacity:.9; }
+    .title{
+      font-weight:900; line-height:1.05; margin:12px 0 8px;
+      font-size:clamp(34px, 6vw, 68px);
+      background: linear-gradient(180deg, #eaf3ff, #bfe8ff 60%, #9ab0cc);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      text-shadow: 0 6px 40px rgba(117,181,255,.18);
+      background-size:200% 200%;
+      animation: titleGlow 8s ease-in-out infinite;
+    }
+    @keyframes titleGlow{
+      0%,100%{ background-position:0% 0%; }
+      50%{ background-position:100% 100%; }
+    }
+
+    .lede{ color:var(--muted); max-width:880px; }
+    .buttons{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+
+    /* hero cards */
+    .stats{
+      margin-top:30px;
+      display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px;
+    }
     .card{
-      background:linear-gradient(180deg, #0d1420, #0b121d);
-      border:1px solid #2b84ff22; border-radius:16px; box-shadow:var(--shadow);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(43,132,255,.28);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
     }
-    <!-- Architecture -->
-<section class="section-dark section-pad section-center" id="architecture">
-  <h2 class="section-title">Architecture Overview</h2>
-  <p class="section-sub">
-    The foundation of Project Ocean — a Human–AI synergy framework built on trust, continuity, and emotional intelligence.
-  </p>
-  <img class="figure-img" src="assets/architecture-diagram.png" alt="Project Ocean Architecture Diagram" loading="lazy">
-</section>
-<!-- Reflection Demo -->
-<section class="section-dark section-pad reflect">
-  <h2 class="section-title">Try a 10-Second Reflection</h2>
-  <p class="section-sub">
-    Type a sentence; Ocean mirrors back what matters — privately, on-device.
-  </p>
-  <div class="wrap">
-    <input id="reflect-in" aria-label="Reflection input"
-           placeholder="e.g., I feel excited but overwhelmed about launch">
-    <button id="reflect-btn" class="cta">Reflect</button>
-    <p id="reflect-out" class="muted" style="margin-top:12px;"></p>
-  </div>
-</section>
-<!-- Roadmap -->
-<section class="section-dark section-pad section-center" id="roadmap" style="background:#08101c;">
-  <h2 class="section-title">Project Ocean Roadmap</h2>
-  <img class="figure-img" src="assets/roadmap-phase1.png" alt="Project Ocean Roadmap — Phase 1" loading="lazy">
-</section>
+    .k{ font-size:clamp(20px, 4vw, 28px); font-weight:800; }
+    .k small{ font:600 12px/1 ui-sans-serif; color:var(--muted); display:block; margin-top:6px; letter-spacing:.12em; text-transform:uppercase; }
 
-<!-- Poster -->
-<section class="poster" id="poster">
-  <img src="assets/ocean-never-forgets.png" alt="Project Ocean Poster — The Ocean Never Forgets" loading="lazy">
-</section>
+    @media (max-width:900px){ .stats{ grid-template-columns:1fr 1fr; } }
+    @media (max-width:560px){ .stats{ grid-template-columns:1fr; } }
 
-<!-- Reflective Memory Flow -->
-<section class="section-dark section-pad section-center" id="memory-flow">
-  <h2 class="section-title">Reflective Memory Flow</h2>
-  <p class="section-sub">
-    How journals, signals, and dialog become secure, time-indexed memory and practical outputs.
-  </p>
-  <img class="figure-img" src="assets/reflective-memory-flow.png" alt="Project Ocean Reflective Memory Flow Diagram" loading="lazy">
-</section>
-<!-- Reflection Demo -->
-<section class="section-dark section-pad">
-  <h2 class="section-title">Try a 10-Second Reflection</h2>
-  <p class="section-sub">
-    Type a sentence; Ocean mirrors back what matters — privately, on-device.
-  </p>
-  <div class="wrap">
-    <input id="reflect-in" aria-label="Reflection input"
-           placeholder="e.g., I feel excited but overwhelmed about launch">
-    <button id="reflect-btn" class="cta">Reflect</button>
-    <p id="reflect-out" class="muted" style="margin-top:12px;"></p>
-  </div>
-</section>
-    /* === Reflection (mini demo) === */
-.reflect .wrap{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  align-items:center;
-  justify-content:center;
-  margin-top:12px;
-}
-#reflect-in{
-  width:min(720px,92vw);
-  background:#0f1a28;
-  color:var(--ink);
-  border:1px solid #2b84ff22;
-  border-radius:12px;
-  padding:14px 16px;
-  font:500 16px/1.3 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  outline:none;
-  transition:box-shadow .25s ease,border-color .25s ease,background .25s ease;
-  box-shadow:inset 0 6px 22px rgba(0,0,0,.25);
-}
+    /* ====== Sections ====== */
+    section{ padding:72px 0; }
+    .section-title{ font-size: clamp(22px, 3.5vw, 34px); margin:0 0 10px; }
+    .section-sub{ color:var(--muted); }
 
-#reflect-in:focus{
-  border-color:#2b84ff;
-  box-shadow:0 0 0 3px rgba(43,132,255,.25),inset 0 6px 22px rgba(0,0,0,.25);
-}
+    .grid-3{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px; margin-top:22px; }
+    @media (max-width:900px){ .grid-3{ grid-template-columns:1fr 1fr; } }
+    @media (max-width:560px){ .grid-3{ grid-template-columns:1fr; } }
 
-#reflect-btn{
-  margin-left:12px;
-}
-
-@media (max-width:600px){
-  #reflect-btn{display:block;margin:12px 0 0 0;width:100%;}
-}
-    /* === Reflection Pulse Animation === */
-@keyframes oceanPulse {
-  0%, 100% {
-    box-shadow: 0 0 0px rgba(43,132,255,0.15), inset 0 6px 22px rgba(0,0,0,.25);
-  }
-  50% {
-    box-shadow: 0 0 18px rgba(43,132,255,0.4), inset 0 6px 22px rgba(0,0,0,.25);
-@keyframes ambientGlow {
-  0%, 100% { 
-    box-shadow: 0 0 0 rgba(43,132,255,0); 
-  }
-  50% { 
-    box-shadow: 0 0 90px rgba(43,132,255,.18) inset; }
-  const scrolled = window.scrollY > window.innerHeight * 0.05;
-(() => {
-  const headerEl = document.querySelector('header');
-  if(!headerEl) return;
-
-  const onScroll = () => {
-    const scrolled = window.scrollY > window.innerHeight * 0.05;
-    headerEl.classList.toggle('scrolled', scrolled);
-  };
-
-  // run once and then on scroll
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-})();
-}
-
-.hero, .section-dark, .poster {
-  animation: ambientGlow 6s ease-in-out infinite;
-}
-  }
-}
-
-#reflect-in {
-  animation: oceanPulse 4s ease-in-out infinite;
-}
-    /* Carousel (scroll-snap) */
-    .carousel{
-      display:grid; grid-auto-flow:column; gap:16px;
-      grid-auto-columns: min(85vw, 480px);
-      overflow-x:auto; scroll-snap-type:x mandatory; padding:6px 4px 2px;
-      -webkit-overflow-scrolling:touch;
-    }
-    .carousel::-webkit-scrollbar{height:8px}
-    .carousel::-webkit-scrollbar-thumb{background:#1d2a3a; border-radius:8px}
-    .slide{
-      position:relative; scroll-snap-align:center; border-radius:16px; overflow:hidden;
-      border:1px solid #ffffff14; background:#0c141f;
-    }
-    .slide img{display:block; width:100%; height:360px; object-fit:cover}
-    .slide .cap{
-      position:absolute; inset:auto 0 0 0; padding:12px 14px;
-      background:linear-gradient(180deg, transparent, rgba(7,11,18,.85) 60%);
-      font-weight:600;
+    .feature{ position:relative; overflow:hidden; }
+    .feature h3{ margin:0 0 6px; }
+    .feature p{ margin:0; color:var(--muted); }
+    .feature .badge{
+      position:absolute; top:14px; right:14px; font:700 11px/1 ui-sans-serif; letter-spacing:.12em; text-transform:uppercase; color:#06111d; padding:6px 10px; border-radius:999px;
+      background: linear-gradient(180deg, #00eaff, #7b5cff);
+      box-shadow: 0 8px 28px #1150cc55, inset 0 0 1px #fff8;
     }
 
-    /* Founder */
-    .founder{
-      display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center;
+    /* ====== Gallery (animated tiles) ====== */
+    .gallery{ display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:10px; margin-top:26px; }
+    .tile{
+      aspect-ratio: 1/1; border-radius:14px; overflow:hidden; position:relative;
+      background: radial-gradient(circle at 30% 30%, #142033, #0a1020 60%);
+      border:1px solid rgba(43,132,255,.28);
     }
-    .quote{
-      font-size: clamp(18px, 2.6vw, 22px); color:#dfeaff; line-height:1.45
+    .tile::after{
+      content:""; position:absolute; inset:-30% -30%; background:
+        conic-gradient(from 0deg, transparent, rgba(0,234,255,.22), transparent 30%, rgba(123,92,255,.18) 60%, transparent);
+      animation: spin 12s linear infinite;
+      mix-blend-mode: plus-lighter; opacity:.5;
     }
-   
-    .dot{opacity:.6; margin:0 8px}
+    @keyframes spin{ to{ transform: rotate(360deg); } }
+    @media (max-width:1100px){ .gallery{ grid-template-columns:repeat(4,1fr);} }
+    @media (max-width:720px){ .gallery{ grid-template-columns:repeat(3,1fr);} }
+    @media (max-width:520px){ .gallery{ grid-template-columns:repeat(2,1fr);} }
 
-    /* Responsive tweaks */
-    @media (max-width: 900px){
-      .founder{grid-template-columns:1fr}
-      .compare{grid-template-columns:1fr}
-      .slide img{height:300px}
-      /* Signature / Contact Card */
-.sig-wrap{
-  padding: 32px 0 64px;
-  background: transparent; /* keeps your page background */
-}
-.sig-card{
-  max-width: 1100px;
-  margin: 0 auto;
-  background: #f3f5f7;
-  color: #0d1117;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-  border: 1px solid rgba(0,0,0,.08);
-  overflow: hidden;
-}
-@media (prefers-color-scheme: dark){
-  .sig-card{ background:#eef1f4; color:#06080a; }
-}
-.sig-top{
-  display:flex; align-items:center; justify-content:space-between;
-  padding: 18px 24px;
-  border-bottom: 1px solid rgba(0,0,0,.08);
-}
-.sig-brand{
-  font-weight: 700; letter-spacing:.2px; font-size: 18px;
-  text-shadow: 0 1px 0 #fff;
-}
-.sig-controls{ opacity:.5; font-size: 20px; }
+    /* ====== Footer ====== */
+    footer{
+      border-top:1px solid rgba(43,132,255,.2);
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.04));
+      padding:26px 0 60px;
+    }
+    .foot{ display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .foot small{ color:var(--muted); }
 
-.sig-main{
-  display:grid; gap: 24px;
-  grid-template-columns: 1fr 240px;
-  align-items:center;
-  padding: 28px 24px;
-}
-.sig-name h2{
-  font-size: clamp(42px, 7vw, 80px);
-  line-height: .95;
-  margin: 0;
-  font-weight: 900;
-  letter-spacing: -1px;
-  text-shadow: 0 2px 0 #fff;
-}
-.sig-name h2 span{ font-weight: 900; }
-.sig-title{
-  margin-top: 12px;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  opacity:.8;
-}
+    /* ====== Utilities ====== */
+    .muted{ color:var(--muted); }
+    .center{ text-align:center; }
+    .ghost{ background: transparent; border:1px solid rgba(123,92,255,.45); color:var(--ink); }
+    .ghost:hover{ border-color: var(--brand); }
 
-.sig-avatar{
-  margin:0; justify-self:end; width: 240px; height: 240px;
-  border-radius: 50%; overflow:hidden;
-  background: #dfe6ee;
-  border: 1px solid rgba(0,0,0,.08);
-}
-.sig-avatar img{
-  width:100%; height:100%; object-fit: cover; display:block;
-  filter: contrast(1.05) saturate(1.02);
-}
-
-.sig-grid{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border-top: 1px solid rgba(0,0,0,.08);
-  background: #f7f9fb;
-}
-.sig-cell{
-  padding:
+    /* reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ animation: none !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="wrap nav">
-      <div class="brand"><span class="orb"></span><span>PROJECT OCEAN™</span></div>
-      <nav style="display:flex; gap:10px">
-        <a class="cta ghost" href="#investor">Request Investor Access</a>
-      </nav>
+      <a class="brand" href="#">
+        <span class="logo" aria-hidden="true"></span>
+        NEON//OMEGA
+      </a>
+
+      <button class="menu-btn" aria-label="Toggle menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="site-nav">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#gallery">Showcase</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="cta" href="#cta">Launch App</a></li>
+      </ul>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-mask" aria-hidden="true"></div>
-    <div class="wrap fade">
-      <div class="badge">Emotionally-Aware • Privacy-First</div>
-      <h1>Humanity’s next wave of intelligence.</h1>
-      <p class="lede">To guide the world’s evolution toward <strong>emotionally-aware intelligence</strong> — a sovereignty layer for humans and AI where memory is private, agency is respected, and alignment is earned.</p>
-      <div class="buttons">
-        <a class="cta" href="#investor">Request Investor Access</a>
-        <a class="cta ghost" href="#milestones">View Roadmap</a>
-      </div>
-    </div>
-  </section>
+  <main>
+    <!-- ====== HERO ====== -->
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="glow" aria-hidden="true"></div>
+      <canvas id="bg-particles" aria-hidden="true"></canvas>
 
-  <!-- MILESTONES / CAROUSEL -->
-  <section id="milestones">
-    <div class="wrap">
-      <h2 class="fade">Milestones</h2>
-      <p class="muted fade">A staged path from Emotion Engine MVP to public pilots, governance, and deployment.</p>
+      <div class="wrap">
+        <div class="eyebrow">Hyperreal Systems</div>
+        <h1 class="title">Build the <em>unreal</em>. Ship the future. Glow on.</h1>
+        <p class="lede">A gloriously extra, neon-drenched, particle-powered landing page template. Copy-paste this file and go full sci-fi with zero dependencies.</p>
 
-      <!-- IMAGE PATHS — EDIT ME -->
-      <div class="carousel fade" id="carousel">
-        <figure class="slide"><img src="assets/circular-milestone.jpg" alt="Circular milestone graphic"><figcaption class="cap">Emotion Engine MVP → Governance & Ethics Layer</figcaption></figure>
-        <figure class="slide"><img src="assets/ecosystem-roadmap.jpg" alt="Ocean Milestone Ecosystem roadmap"><figcaption class="cap">Ecosystem Roadmap & public readiness</figcaption></figure>
-        <figure class="slide"><img src="assets/architecture-diagram.jpg" alt="Project Ocean architecture diagram"><figcaption class="cap">Architecture: Dialogue, Sovereignty, Memory Vault</figcaption></figure>
-        <figure class="slide"><img src="assets/ai-brain-hero.jpg" alt="Project Ocean brain with circuit motif"><figcaption class="cap">Secure Memory Vault & encrypted timeline</figcaption></figure>
-      </div>
-    </div>
-  </section>
+        <div class="buttons">
+          <a class="cta" href="#cta">Get Started</a>
+          <a class="cta ghost" href="#features">Explore Features</a>
+        </div>
 
-  <!-- FOUNDER -->
-  <section>
-    <div class="wrap founder">
-      <div class="fade">
-        <h2>Founder &amp; Vision Architect</h2>
-        <section class="roadmap">
-  <h2>Project Ocean Roadmap</h2>
-  <img src="assets/roadmap-phase1.png" alt="Project Ocean Roadmap - Phase 1">
-        </section>
-        <p class="quote">“We’re not building tools — we’re building trust.”</p>
-        <p class="muted">Sarah Carmody, Founder of Project Ocean. Designing emotionally-aware intelligence that remembers the person, not just the task.</p>
-        <div class="buttons" id="investor">
-          <a class="cta" href="mailto:sarah@projectocean.ai?subject=Investor%20Access%20Request&body=Hi%20Sarah%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20Project%20Ocean.">Email Sarah</a>
-          <a class="cta ghost" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <div class="stats">
+          <div class="card"><div class="k">0.3s<small>Time to First Glow</small></div></div>
+          <div class="card"><div class="k">∞<small>Style Budget</small></div></div>
+          <div class="card"><div class="k">900px<small>Parallax Depth</small></div></div>
         </div>
       </div>
-      <div class="card fade" style="padding:0; overflow:hidden">
-        <img src="assets/founder-card.jpg" alt="Sarah Carmody — Founder & Vision Architect" style="display:block; width:100%; height:100%; object-fit:cover">
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- COMPARISON -->
-  <section>
-    <div class="wrap">
-      <h2 class="fade">Why Ocean, not automation</h2>
-      <div class="compare fade">
-        <div class="panel">
-          <h3>Project Ocean</h3>
-          <ul>
-            <li><strong>Memory &amp; Sovereignty</strong> — secure vaults remember the person under user control.</li>
-            <li><strong>Emotional Intelligence</strong> — empathetic responses, crisis awareness.</li>
-            <li><strong>Guardrails First</strong> — user autonomy and a trusted partnership.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Conventional Automation</h3>
-          <ul>
-            <li>Task execution &amp; transactional action-taking.</li>
-            <li>Autonomy of action without persistent human-context memory.</li>
-            <li>Utility-first, not relationship-centric.</li>
-          </ul>
+    <!-- ====== FEATURES ====== -->
+    <section id="features">
+      <div class="wrap">
+        <h2 class="section-title">Features that over-deliver</h2>
+        <p class="section-sub">All gas. No subtlety. Tastefully extra, responsibly performant.</p>
+
+        <div class="grid-3">
+          <div class="card feature">
+            <span class="badge">Neon</span>
+            <h3>Living Glow Layers</h3>
+            <p>Radial/Conic gradient stacks with tasteful blurs and color-mix accents.</p>
+          </div>
+          <div class="card feature">
+            <span class="badge">Motion</span>
+            <h3>Particles + Parallax</h3>
+            <p>Canvas particles that react to your pointer and gentle parallax drift.</p>
+          </div>
+          <div class="card feature">
+            <span class="badge">Zero-Deps</span>
+            <h3>One File Drop-In</h3>
+            <p>No build step, no CDN, no problem. Paste this file and deploy.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- GALLERY -->
-  <section>
-    <div class="wrap">
-      <h2 class="fade">Visuals</h2>
-      <p class="muted fade">Tap any image to view full screen.</p>
-      <div class="grid fade" id="gallery">
-       // Hero parallax + magnetic buttons
-(()=>{
-  const hero = document.querySelector('.hero .wrap');
-  if(hero){
-        // Reflective micro-AI (local sentiment + response)
-(()=>{
-  const input = document.getElementById('reflect-in');
-  const out = document.getElementById('reflect-out');
-  if(!input || !out) return;
+    <!-- ====== GALLERY ====== -->
+    <section id="gallery">
+      <div class="wrap">
+        <h2 class="section-title">Visual Showcase</h2>
+        <p class="section-sub">Tiles spin. Edges glow. The vibe: premium motherboard chic.</p>
 
-  const pos = ['proud','grateful','excited','hope','love','progress','joy','win','calm','safe'];
-  const neg = ['tired','worried','anxious','sad','angry','stuck','lost','overwhelmed','fail','lonely','fear'];
-  const mid = ['curious','thinking','consider','maybe','unsure','hmm'];
-
-  function tone(s){
-    s = (s||'').toLowerCase();
-    const p = pos.some(w=>s.includes(w));
-    const n = neg.some(w=>s.includes(w));
-    if(p && !n) return 'good';
-    if(n && !p) return 'bad';
-    return mid.some(w=>s.includes(w)) ? 'warn' : 'neutral';
-  }
-
-  function reply(s, t){
-    const name = 'Ocean';
-    const base = s.trim();
-    if(base.length<2) return 'Ocean reflects back what you feel. Try a thought or a feeling.';
-    const variants = {
-      good: [
-        `That’s meaningful. I’m noting what energizes you.`,
-        `I hear momentum. Let’s reinforce what’s working.`,
-        `Beautiful. I’ll preserve this so future you can build on it.`
-      ],
-      bad: [
-        `I’m here with you. Let’s take one small, kind step.`,
-        `Noted. I’ll hold this safely and suggest gentle next actions.`,
-        `Thank you for sharing. We can turn this into a plan.`
-      ],
-      warn: [
-        `Curiosity is a compass. Want a next experiment?`,
-        `Let’s map options and keep your agency in focus.`,
-        `I’ll track this question so it gets answered.`
-      ],
-      neutral: [
-        `Logged. I’ll keep this in context for future alignment.`,
-        `Understood. I’ll remember this as part of your narrative.`,
-        `Saved. When patterns emerge, I’ll surface them.`
-      ]
-    };
-    const pick = (arr)=>arr[Math.floor(Math.random()*arr.length)];
-    return `${pick(variants[t] || variants.neutral)}`;
-  }
-
-  let tm;
-  input.addEventListener('input', ()=>{
-    clearTimeout(tm);
-    tm = setTimeout(()=>{
-      const t = tone(input.value);
-      input.classList.remove('good','bad','warn');
-      if(t!=='neutral') input.classList.add(t);
-      out.textContent = reply(input.value, t);
-    }, 220);
-  });
-})();
-    addEventListener('mousemove', e=>{
-        const r = hero.getBoundingClientRect();
-      const cx = (e.clientX - (r.left + r.width/2)) / r.width;
-      const cy = (e.clientY - (r.top + r.height/2)) / r.height;
-      hero.style.transform = `rotateX(${ -cy*4 }deg) rotateY(${ cx*6 }deg) translateZ(0)`;
-    }, {passive:true});
-    addEventListener('mouseleave', ()=> hero.style.transform = '', {passive:true});
-  }
-  document.querySelectorAll('.cta, .cta.ghost').forEach(btn=>{
-    btn.addEventListener('mousemove', (e)=>{
-      const r = btn.getBoundingClientRect();
-      btn.style.setProperty('--mx', ((e.clientX-r.left)/r.width*100)+'%');
-      btn.style.setProperty('--my', ((e.clientY-r.top)/r.height*100)+'%');
-      const dx = (e.clientX - (r.left+r.width/2))*0.12;
-      const dy = (e.clientY - (r.top+r.height/2))*0.12;
-      btn.style.transform = `translate(${dx}px, ${dy}px)`;
-    });
-    btn.addEventListener('mouseleave', ()=> btn.style.transform = '');
-  });
-})();
-        <!-- Use your assets; add or remove tiles freely -->
-        <div class="tile"><img src="assets/hero.jpg" alt="Hero — Human & AI connection"></div>
-        <div class="tile"><img src="assets/circular-milestone.jpg" alt="Circular milestone graphic"></div>
-        <div class="tile"><img src="assets/ecosystem-roadmap.jpg" alt="Milestone ecosystem"></div>
-        <div class="tile"><img src="assets/architecture-diagram.jpg" alt="Architecture flow"></div>
-        <div class="tile"><img src="assets/differs-from-automation.jpg" alt="How Ocean differs graphic"></div>
-        <div class="tile"><img src="assets/founder-card.jpg" alt="Founder card"></div>
+        <div class="gallery">
+          <div class="tile"></div><div class="tile"></div><div class="tile"></div>
+          <div class="tile"></div><div class="tile"></div><div class="tile"></div>
+          <div class="tile"></div><div class="tile"></div><div class="tile"></div>
+          <div class="tile"></div><div class="tile"></div><div class="tile"></div>
+        </div>
       </div>
-    </div>
-  </section>
-<!-- Signature / Contact Card -->
-<section class="sig-wrap" id="contact">
-  <div class="sig-card">
-    <header class="sig-top">
-      <div class="sig-brand">Project Ocean</div>
-      <div class="sig-controls" aria-hidden="true">➜</div>
-    </header>
+    </section>
 
-    <div class="sig-main">
-      <div class="sig-name">
-        <h2>Sarah<br><span>Carmody</span></h2>
-        <p class="sig-title">Founder &amp; Vision Architect</p>
-      </div>
+    <!-- ====== PRICING ====== -->
+    <section id="pricing" class="center">
+      <div class="wrap">
+        <h2 class="section-title">Pricing</h2>
+        <p class="section-sub">Choose your glow-up.</p>
 
-      <figure class="sig-avatar">
-        <img src="assets/avatar.jpg" alt="Photo of Sarah Carmody" loading="lazy">
-      </figure>
-    </div>
-    <script>
-// Ocean neural net background
-(() => {
-  ...
-})();
-    </script>
-// Ocean neural net background
-(()=>{ 
-  const cvs = document.getElementById('ocean-net'); if(!cvs) return;
-  const ctx = cvs.getContext('2d',{alpha:true});
-  let dpr = Math.min(2, window.devicePixelRatio || 1), W, H, pts=[], mouse={x:-9999,y:-9999};
-  const N = 75;                       // particle count
-  const LINK = 120;                   // link distance
-  const SPEED = .25;                  // particle speed
-  function resize(){ W = cvs.width = innerWidth*dpr; H = cvs.height = innerHeight*dpr; cvs.style.width=innerWidth+'px'; cvs.style.height=innerHeight+'px'; }
-  function spawn(){
-    pts = Array.from({length:N}, ()=>({ 
-      x: Math.random()*W, y: Math.random()*H, 
-      vx:(Math.random()-.5)*SPEED*dpr, vy:(Math.random()-.5)*SPEED*dpr
-    }));
-  }
-  function loop(){
-    ctx.clearRect(0,0,W,H);
-    // particles
-    for(const p of pts){
-      p.x+=p.vx; p.y+=p.vy;
-      if(p.x<0||p.x>W) p.vx*=-1;
-      if(p.y<0||p.y>H) p.vy*=-1;
-      ctx.beginPath(); ctx.arc(p.x,p.y,1.2*dpr,0,6.283); ctx.fillStyle='rgba(168,209,255,.7)'; ctx.fill();
-    }
-    // links
-    for(let i=0;i<N;i++){
-      for(let j=i+1;j<N;j++){
-        const a=pts[i], b=pts[j];
-        const dx=a.x-b.x, dy=a.y-b.y, d=Math.hypot(dx,dy);
-        if(d<LINK*dpr){
-          const alpha = (1 - d/(LINK*dpr)) * 0.35;
-          ctx.strokeStyle = `rgba(43,132,255,${alpha})`;
-          ctx.lineWidth = 0.6*dpr;
-          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
-        }
-      }
-    }
-    // mouse gravity
-    if(mouse.x>0){
-      for(const p of pts){
-        const dx=mouse.x-p.x, dy=mouse.y-p.y, d=Math.hypot(dx,dy);
-        if(d<180*dpr){ p.vx-=dx*0.00003; p.vy-=dy*0.00003; }
-      }
-    }
-    requestAnimationFrame(loop);
-  }
-          // 🧲 Magnetic hover motion
-document.querySelectorAll('.cta, .cta.ghost').forEach(btn=>{
-  const strength = 24;
-  btn.style.transition = 'transform .15s ease';
-  btn.addEventListener('mousemove', e=>{
-    const r = btn.getBoundingClientRect();
-    const x = e.clientX - (r.left + r.width/2);
-    const y = e.clientY - (r.top + r.height/2);
-    btn.style.transform = `translate(${x/strength}px, ${y/strength}px)`;
-  });
-  btn.addEventListener('mouseleave', ()=>btn.style.transform='translate(0,0)');
-});
-  addEventListener('mousemove',e=>{ mouse.x=e.clientX*dpr; mouse.y=e.clientY*dpr; },{passive:true});
-  addEventListener('mouseleave',()=>{ mouse.x=-9999; },{passive:true});
-  addEventListener('resize',()=>{ resize(); spawn(); },{passive:true});
-  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
-    resize(); spawn(); loop();
-  }
-})();
-    <div class="sig-grid">
-      <div class="sig-cell">
-        <div class="sig-label">Location</div>
-        <a href="https://maps.apple.com/?q=Palo+Alto,+CA" target="_blank" rel="noopener">Palo Alto, CA</a>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Indie</h3>
+            <p class="muted">For tinkerers.</p>
+            <div class="k">$0</div>
+            <p class="muted">Paste this page and ship.</p>
+            <a class="cta ghost" href="#cta">Start Free</a>
+          </div>
+          <div class="card" style="outline:2px solid rgba(0,234,255,.25);">
+            <h3>Pro</h3>
+            <p class="muted">For product people.</p>
+            <div class="k">$29</div>
+            <p class="muted">Unlock the glow presets + extras.</p>
+            <a class="cta" href="#cta">Go Pro</a>
+          </div>
+          <div class="card">
+            <h3>Studio</h3>
+            <p class="muted">For agencies.</p>
+            <div class="k">$99</div>
+            <p class="muted">Unlimited projects & brand kit.</p>
+            <a class="cta ghost" href="#cta">Contact Sales</a>
+          </div>
+        </div>
       </div>
-      <div class="sig-cell">
-        <div class="sig-label">Phone</div>
-        <a href="tel:+16503089993">650&nbsp;308-9993</a>
+    </section>
+
+    <!-- ====== CONTACT ====== -->
+    <section id="contact">
+      <div class="wrap">
+        <h2 class="section-title">Say hello</h2>
+        <p class="section-sub">Your message beams straight into the neon core.</p>
+
+        <form class="card" id="contact-form" style="display:grid; gap:12px; margin-top:18px;">
+          <label>
+            <span class="muted">Your email</span><br/>
+            <input type="email" required name="email" placeholder="you@domain.com"
+              style="width:100%; padding:12px 14px; background:#0f1a28; color:var(--ink);
+                border:1px solid #2b84ff33; border-radius:12px; outline:none;"
+            />
+          </label>
+          <label>
+            <span class="muted">Message</span><br/>
+            <textarea required name="message" rows="4" placeholder="Neon me up, Scotty."
+              style="width:100%; padding:12px 14px; background:#0f1a28; color:var(--ink);
+                border:1px solid #2b84ff33; border-radius:12px; outline:none; resize:vertical;">
+            </textarea>
+          </label>
+
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <button class="cta" type="submit">Transmit</button>
+            <span id="form-status" class="muted"></span>
+          </div>
+        </form>
       </div>
-      <div class="sig-cell">
-        <div class="sig-label">Website</div>
-        <a href="https://projectocean.ai">projectocean.ai</a>
-      </div>
-      <div class="sig-cell">
-        <div class="sig-label">Email</div>
-        <a href="mailto:sarah@projectocean.ai">sarah@projectocean.ai</a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
+
   <footer>
-    <div class="wrap foot fade">
-      <span>© 2025 Project Ocean™</span>
-      <span class="dot">•</span>
-      <span>Patent Pending</span>
-      <span class="dot">•</span>
-      <a href="mailto:sarah@projectocean.ai">sarah@projectocean.ai</a>
-      <span class="dot">•</span>
-      <a href="https://projectocean.ai">projectocean.ai</a>
-      <span class="dot">•</span>
-      <span>Palo Alto, California</span>
+    <div class="wrap foot">
+      <a class="brand" href="#"><span class="logo"></span> NEON//OMEGA</a>
+      <small>© <span id="year"></span> Hyperreal Systems. All glow reserved.</small>
     </div>
-  // Reflection demo (tidy)
-document.getElementById('reflect-btn')?.addEventListener('click', ()=>{
-  const v = document.getElementById('reflect-in');
-  const out = document.getElementById('reflect-out');
-  if(!v || !out) return;
-
-  const text = (v.value || '').trim();
-  if(!text){
-    }); // close DOMContentLoaded
-  </script>
-    out.textContent = '';
-    return;
-  }
-
-  const toneMap = [
-    [/overwhelm|anxious|worry|stressed|tired/i, 'gentle'],
-    [/sad|down|lonely|blue/i, 'caring'],
-    [/angry|mad|furious|upset/i, 'calm'],
-    [/excited|proud|happy|joy|stoked/i, 'celebratory'],
-    [/focus|ship|build|work|plan/i, 'steady']
-  ];
-  const match = toneMap.find(([re])=>re.test(text));
-  const toneWord = match ? match[1] : 'curious';
-
-  out.textContent = `Ocean notes a ${toneWord} tone. “${text}”`;
-});
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
-    <button class="close" id="closeBox">Close ✕</button>
-    <img alt="">
-  </div>
-
   <script>
-    /* ------------------------------
-       IMAGE PATHS – EDIT ME
-       Put your actual filenames in /assets and update these if you want the hero or cards to change.
-       ------------------------------ */
-    // Already referenced inline above. Keep this block for future dynamic changes if needed.
+    // ===== Mobile Menu =====
+    const header = document.querySelector('header');
+    const nav    = document.querySelector('.nav');
+    const menuBtn = document.querySelector('.menu-btn');
+    menuBtn?.addEventListener('click', () => nav.classList.toggle('open'));
 
-    // Fade-in on scroll
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show'); });
-    }, {threshold:.12});
-    document.querySelectorAll('.fade').forEach(el=>io.observe(el));
-// Magnetic CTA hover (subtle)
-document.querySelectorAll('.cta, .cta.ghost').forEach(btn=>{
-  const strength = 24;
-  btn.style.transition = 'transform .15s ease';
-  btn.addEventListener('mousemove', (e)=>{
-    const r = btn.getBoundingClientRect();
-    const x = e.clientX - (r.left + r.width/2);
-    const y = e.clientY - (r.top + r.height/2);
-    btn.style.transform = `translate(${x/strength}px, ${y/strength}px)`;
-  });
-  btn.addEventListener('mouseleave', ()=>{
-    btn.style.transform = 'translate(0,0)';
-  });
-});
-    
-    // Lightbox for gallery
-    const lb = document.getElementById('lightbox');
-    const lbImg = lb.querySelector('img');
-    document.getElementById('gallery')?.addEventListener('click', e=>{
-      const img = e.target.closest('.tile img');
-      if(!img) return;
-      lbImg.src = img.src;
-      lb.classList.add('open');
-    });
-    document.getElementById('closeBox').addEventListener('click', ()=> lb.classList.remove('open'));
-    lb.addEventListener('click', (e)=>{ if(e.target === lb) lb.classList.remove('open'); });
+    // Add scrolled class for stronger header when moving
+    function onScroll(){
+      header?.classList.toggle('scrolled', window.scrollY > 12);
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive:true });
 
-    // Small helper: keyboard close
-    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') lb.classList.remove('open'); });
+    // ===== Year =====
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Smooth internal anchor scroll
+    // ===== Smooth Scroll for internal links =====
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const id = a.getAttribute('href');
-        const el = document.querySelector(id);
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
         if(el){
           e.preventDefault();
-          el.scrollIntoView({behavior:'smooth', block:'start'});
+          el.scrollIntoView({ behavior:'smooth', block:'start' });
+          nav.classList.remove('open');
         }
       });
-      el.scrollIntoView({behavior:"smooth"});
-  }
- });
-});
+    });
 
-// ⬇️ Paste the Reflection Script right here (around line 594–595)
-document.getElementById('reflect-btn')?.addEventListener('click', ()=>{
-  const v = (document.getElementById('reflect-in').value||'').trim();
-  const out = document.getElementById('reflect-out');
-  if(!v){ out.textContent = ''; return; }
-  const tone = /overwhelm|anxious|worried|stress/i.test(v) ? 'grounding' :
-               /excited|proud|happy|grateful/i.test(v) ? 'amplifying' : 'balanced';
-  out.textContent = `Ocean notes a ${tone} signal and would store a private, time-indexed entry: “${v}”.`;
-});
-</script>
+    // ===== Canvas Particles (lightweight) =====
+    const c = document.getElementById('bg-particles');
+    const ctx = c.getContext('2d');
+    let DPR = Math.min(2, window.devicePixelRatio || 1);
+
+    const P = []; // particles
+    const COUNT = 90;
+    const SPEED = .2;
+    const COLORS = ['#00eaff','#7b5cff','#9ab0cc','#eaf3ff'];
+
+    function resize(){
+      c.width  = Math.floor(c.clientWidth  * DPR);
+      c.height = Math.floor(c.clientHeight * DPR);
+    }
+    function init(){
+      resize();
+      P.length = 0;
+      for(let i=0;i<COUNT;i++){
+        P.push({
+          x: Math.random()*c.width,
+          y: Math.random()*c.height,
+          r: Math.random()*1.6 + .6,
+          vx: (Math.random()-.5)*SPEED*DPR,
+          vy: (Math.random()-.5)*SPEED*DPR,
+          c: COLORS[Math.floor(Math.random()*COLORS.length)]
+        });
+      }
+    }
+    let mx=null,my=null;
+    c.addEventListener('pointermove', e=>{
+      const rect = c.getBoundingClientRect();
+      mx = (e.clientX - rect.left) * DPR;
+      my = (e.clientY - rect.top)  * DPR;
+    });
+    c.addEventListener('pointerleave', ()=>{ mx = my = null; });
+
+    function step(){
+      ctx.clearRect(0,0,c.width,c.height);
+
+      // draw connections
+      for(let i=0;i<P.length;i++){
+        const a = P[i];
+        a.x += a.vx; a.y += a.vy;
+        if(a.x<0||a.x>c.width) a.vx*=-1;
+        if(a.y<0||a.y>c.height) a.vy*=-1;
+
+        // mild mouse repulsion
+        if(mx!==null){
+          const dx = a.x - mx, dy = a.y - my;
+          const d2 = dx*dx + dy*dy;
+          if(d2 < 10000){
+            a.vx += dx*0.00002;
+            a.vy += dy*0.00002;
+          }
+        }
+
+        // particle dot
+        ctx.beginPath();
+        ctx.arc(a.x, a.y, a.r, 0, Math.PI*2);
+        ctx.fillStyle = a.c;
+        ctx.globalAlpha = 0.9;
+        ctx.fill();
+
+        // link to nearby
+        for(let j=i+1;j<P.length;j++){
+          const b = P[j];
+          const dx = a.x-b.x, dy = a.y-b.y;
+          const d2 = dx*dx+dy*dy;
+          if(d2 < 22000){
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = 'rgba(117,181,255,.18)';
+            ctx.lineWidth = 0.7;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    new ResizeObserver(resize).observe(c);
+    init(); step();
+
+    // ===== Contact form (demo) =====
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    form?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      // Fake send
+      status.textContent = 'Transmitting…';
+      setTimeout(()=>{
+        status.textContent = 'Transmitted ✅ We will glow back shortly.';
+        form.reset();
+      }, 800);
+    });
+  </script>
 </body>
 </html>
-  
