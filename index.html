@@ -344,14 +344,6 @@ header.scrolled{
     radial-gradient(60% 40% at 80% 70%, var(--glow-cyan) 0%, transparent 60%);
   filter: blur(18px);
   opacity:.9;
-  z-index:-1;
-  pointer-events:none;
-  transition: opacity .25s ease, filter .25s ease, transform .15s ease;
-  animation: glowShift 14s ease-in-out infinite;   /* <- SAME keyframes as hero */
-}
-
-.cta:hover::before, .cta.ghost:hover::before {
-  filter: blur(24px);
   opacity: 1;
 }
 
