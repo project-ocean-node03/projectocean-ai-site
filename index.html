@@ -472,11 +472,7 @@ animation: ambientGlow 6s ease-in-out infinite; /* gentle breathing glow */
 @media (prefers-reduced-motion: reduce) {
   .hero::before, .hero h1 { animation: none; }
 }
-/* 🌐 Ambient glow animation */
-@keyframes ambientGlow {
-  0%,100% { box-shadow: 0 0 0 rgba(43,132,255,0); }
-  50%     { box-shadow: 0 0 90px rgba(43,132,255,.18) inset; }
-}
+
 @keyframes glowShift {
   0%, 100% { --glow: rgba(43,132,255,0.45); }
   50%      { --glow: rgba(0,224,255,0.55); }
