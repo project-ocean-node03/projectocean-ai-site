@@ -352,32 +352,6 @@ header{
   position: relative;
   z-index: 10;
 }
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.nav-links a {
-  color: #eaf3ff;
-  text-decoration: none;
-  font-weight: 500;
-}
-.nav-links a:hover {
-  color: var(--glow-cyan);
-}
-/* ==== Ocean network background ==== */
-#ocean-net{
-  position: fixed; inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: .18; /* subtle */
-  filter: saturate(110%) contrast(105%);
-}
-@media (prefers-color-scheme: light){ #ocean-net{ opacity:.14; } }
-@media (prefers-reduced-motion: reduce){ #ocean-net{ display:none; } }
-    /* Hero */
     .hero{
 
 .hero h1{
