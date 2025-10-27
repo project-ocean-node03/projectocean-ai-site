@@ -399,34 +399,6 @@ animation: ambientGlow 6s ease-in-out infinite; /* gentle breathing glow */
 
 /* keep your background image layer behind everything if you have .hero-bg */
 .hero-bg{ z-index:-1; }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: -20%;
-  background:
-    radial-gradient(60% 60% at 30% 30%, rgba(43,132,255,.25) 0%, transparent 70%),
-    radial-gradient(50% 70% at 70% 70%, rgba(117,181,255,.2) 0%, transparent 80%);
-  filter: blur(90px);
-  opacity: .6;
-  z-index: -1;
-}
-  background: linear-gradient(180deg, #eaf3ff 0%, #a8d1ff 60%, #75b5ff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;           /* uses the gradient */
-  text-shadow: 0 6px 40px rgba(117,181,255,.22);
-        }
-      }
-      position:relative; overflow:hidden;
-      padding: clamp(72px, 12vh, 120px) 0 clamp(48px, 8vh, 80px);
-      isolation:isolate;
-    }
-    .hero-bg{
-      position:absolute; inset:-6% -6% 0 -6%; z-index:-2;
-      background:url(assets/hero.jpg) center/cover no-repeat; /* EDIT path */
-      filter:saturate(105%) contrast(105%) brightness(.85);
-      opacity:.5;
-    }
     /* ——— Living glow under the hero ——— */
 .hero::before{
   content:"";
