@@ -4,299 +4,286 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Project Ocean — Humanity’s Next Wave of Intelligence</title>
-  <meta name="description" content="Emotionally‑aware, privacy‑first intelligence. A sovereignty layer where memory is private, agency is respected, and alignment is earned." />
+  <meta name="description" content="Emotionally‑aware, privacy‑first intelligence. Sovereignty layer, Secure Memory Vaults, and Firmament boundary — Project Ocean." />
+  <meta name="theme-color" content="#00eaff" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Project Ocean — Humanity’s Next Wave of Intelligence" />
-  <meta property="og:description" content="Emotionally‑aware AI. Privacy‑first. Memory under your control." />
+  <meta property="og:description" content="Emotionally‑aware AI with privacy at the core. Memory under your control." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.projectocean.ai" />
-  <meta property="og:image" content="assets/og-cover.jpg" />
+  <meta property="og:url" content="https://projectocean.ai" />
+  <meta property="og:image" content="assets/og-cover.webp" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Project Ocean — Humanity’s Next Wave of Intelligence" />
-  <meta name="twitter:description" content="Emotionally‑aware AI. Privacy‑first. Memory under your control." />
-  <meta name="twitter:image" content="assets/og-cover.jpg" />
-  <meta name="theme-color" content="#0a0f16" />
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    /* === Root Theme === */
     :root{
-      --bg:#070b12; --ink:#eaf3ff; --muted:#97a9c6;
-      --ocean:#2b84ff; --ocean-2:#8ec5ff; --panel:#0e1621;
-      --ring:#2b84ff; --shadow:0 20px 60px rgba(0,0,0,.45);
+      --bg:#040911;        /* abyss */
+      --bg-2:#071122;      /* deep */
+      --ink:#eaf3ff;       /* ice */
+      --muted:#9ab0cc;     /* mist */
+      --brand:#00eaff;     /* neon cyan */
+      --brand-2:#7b5cff;   /* violet core */
+      --ring:#2b84ff;      /* edge */
+      --card:#0a1020;
+      --shadow:0 20px 60px rgba(0,0,0,.45);
+      --radius:16px;
+      --success:#36fba1;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--ink);
-      background: radial-gradient(1200px 800px at 20% -10%, rgba(43,132,255,.10), transparent),
-                  radial-gradient(1000px 700px at 110% -10%, rgba(43,132,255,.08), transparent),
-                  var(--bg);
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    body{
+      margin:0; color:var(--ink);
+      font:500 16px/1.6 ui-sans-serif, system-ui, -apple-system, Inter, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 800px at 78% -10%, rgba(0,234,255,.08), transparent 60%),
+        radial-gradient(1200px 800px at 8% 120%, rgba(123,92,255,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+      overflow-x:hidden;
     }
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{width:min(1200px,92vw);margin-inline:auto}
 
-    /* Layout helpers */
-    .wrap{max-width:1100px; margin:0 auto; padding:0 20px}
-    section{padding:72px 0}
-    h1{font-size:clamp(34px,6vw,64px); line-height:1.05; margin:12px 0}
-    h2{font-size:clamp(22px,3.5vw,36px); margin:0 0 12px}
-    .muted{color:var(--muted)}
+    /* === Header === */
+    header{position:sticky;top:0;z-index:1000;background:rgba(6,12,22,.35);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(43,132,255,.25);box-shadow:inset 0 0 0 1px rgba(123,92,255,.08);opacity:0;transform:translateY(-8px);animation:navIn .6s ease-out forwards}
+    @keyframes navIn{to{opacity:1;transform:none}}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center;color:var(--ink);font-weight:800;letter-spacing:.4px}
+    .orb{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#00eaff,#7b5cff 60%,#111 62%);box-shadow:0 0 24px rgba(0,234,255,.55),0 0 48px rgba(123,92,255,.45);animation:pulse 4s ease-in-out infinite}
+    @keyframes pulse{0%,100%{filter:drop-shadow(0 0 6px #2b84ff88)}50%{filter:drop-shadow(0 0 18px #2b84ffcc)}}
+    .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+    .nav-links a{color:var(--ink);opacity:.9;position:relative;padding:6px 0}
+    .nav-links a::after{content:"";position:absolute;inset:auto 0 -2px 0;height:2px;background:linear-gradient(90deg,transparent,var(--brand),var(--brand-2),transparent);transform:scaleX(0);transform-origin:center;transition:transform .35s ease}
+    .nav-links a:hover::after{transform:scaleX(1)}
 
-    /* Header / nav */
-    header{position:sticky; top:0; z-index:50; background:rgba(7,11,18,.55); backdrop-filter:saturate(140%) blur(6px);}
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 20px}
-    .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); font-weight:700}
-    .orb{width:18px; height:18px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #97d2ff 0%, #2b84ff 45%, #153a6b 70%, #091220 100%); box-shadow:0 0 24px #7fc4ffaa, 0 0 60px #2b84ff66;}
-    .nav a{color:var(--ink); text-decoration:none;}
-    .cta{display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:12px; font-weight:600; color:#fff; background:linear-gradient(180deg,#2b84ff,#1150cc); box-shadow:0 8px 28px #1150cc55, inset 0 0 0 1px #ffffff22; transition:transform .12s ease, box-shadow .2s ease}
-    .cta:hover{transform:translateY(-1px); box-shadow:0 12px 36px #1150cc66, inset 0 0 0 1px #ffffff33}
-    .cta.ghost{background:#0f1a28; border:1px solid #2b84ff55; color:var(--ink)}
+    .cta{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;color:#06111d;font-weight:750;background:linear-gradient(180deg,#00eaff,#7b5cff);box-shadow:0 8px 28px #1150cc55,inset 0 0 1px #fff8;border:0;cursor:pointer;text-decoration:none;transition:transform .12s ease, box-shadow .2s ease;position:relative;isolation:isolate}
+    .cta:hover{transform:translateY(-1px)}
+    .cta::before{content:"";position:absolute;inset:-6px;border-radius:inherit;z-index:-1;opacity:.85;background:radial-gradient(40% 60% at 20% 30%,rgba(0,234,255,.35),transparent 60%),radial-gradient(60% 40% at 80% 70%,rgba(123,92,255,.35),transparent 60%);filter:blur(18px);pointer-events:none;transition:opacity .25s ease,filter .25s ease}
+    .cta:hover::before{filter:blur(24px);opacity:1}
 
-    /* Hero */
-    .hero{position:relative; overflow:hidden}
-    .hero::before{content:""; position:absolute; inset:-20%; z-index:0;
-      background: radial-gradient(60% 80% at 70% 30%, rgba(118,199,255,.18), transparent 60%),
-                  radial-gradient(70% 60% at 25% 70%, rgba(43,132,255,.22), transparent 60%),
-                  conic-gradient(from 0deg, #0b111a, #102c4f, #0b111a);
-      filter: blur(40px) saturate(140%) contrast(110%);
-      opacity:.6; animation:oceanShift 26s ease-in-out infinite alternate;
-    }
-    .hero .wrap{position:relative; z-index:1; text-align:center; padding:96px 20px}
-    .badge{display:inline-block; padding:6px 10px; border:1px solid #ffffff1a; border-radius:999px; background:#ffffff08; font-size:12px}
-    .lede{color:var(--muted); max-width:880px; margin:0 auto}
-    .buttons{display:flex; gap:12px; margin-top:26px; flex-wrap:wrap; justify-content:center}
+    /* === Hero: Neon x Ocean === */
+    .hero{position:relative;overflow:hidden;isolation:isolate;padding:clamp(84px,14vh,140px) 0;perspective:900px}
+    .hero canvas{position:absolute;inset:0;z-index:-2;filter:saturate(120%) contrast(110%);opacity:.55}
+    .glow{position:absolute;inset:-20%;z-index:-1;background:radial-gradient(60% 80% at 70% 30%,rgba(0,234,255,.25),transparent 60%),radial-gradient(70% 60% at 25% 70%,rgba(123,92,255,.25),transparent 60%),conic-gradient(from 0deg,#0b111a,#08101a,#0b111a);filter:blur(40px) saturate(140%) contrast(110%);animation:oceanShift 26s ease-in-out infinite}
+    @keyframes oceanShift{0%{transform:translate3d(-2%,-1%,0) rotate(.5deg) scale(1.02)}50%{transform:translate3d(1%,2%,0) rotate(-.5deg) scale(1.04)}100%{transform:translate3d(3%,-2%,0) rotate(0) scale(1.02)}}
+    .eyebrow{color:var(--brand);font-weight:800;letter-spacing:.22em;text-transform:uppercase;opacity:.9}
+    .title{font-weight:900;line-height:1.05;margin:12px 0 10px;font-size:clamp(36px,6vw,72px);background:linear-gradient(180deg,#eaf3ff,#bfe8ff 60%,#9ab0cc);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 40px rgba(117,181,255,.18);background-size:200% 200%;animation:titleGlow 8s ease-in-out infinite}
+    @keyframes titleGlow{0%,100%{background-position:0% 0%}50%{background-position:100% 100%}}
+    .lede{color:var(--muted);max-width:880px}
+    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
 
-    /* Cards / panels */
-    .card{background:linear-gradient(180deg,#0d1420,#0b121d); border:1px solid #2b84ff22; border-radius:16px; box-shadow:var(--shadow)}
+    .stats{margin-top:30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(43,132,255,.28);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .k{font-size:clamp(20px,4vw,28px);font-weight:800}
+    .k small{font:600 12px/1 ui-sans-serif;color:var(--muted);display:block;margin-top:6px;letter-spacing:.12em;text-transform:uppercase}
 
-    /* Carousel */
-    .carousel{display:grid; grid-auto-flow:column; gap:16px; grid-auto-columns:min(85vw,480px); overflow-x:auto; scroll-snap-type:x mandatory; padding:6px 4px 2px; -webkit-overflow-scrolling:touch}
-    .carousel::-webkit-scrollbar{height:8px}
-    .carousel::-webkit-scrollbar-thumb{background:#1d2a3a; border-radius:8px}
-    .slide{position:relative; scroll-snap-align:center; border-radius:16px; overflow:hidden; border:1px solid #ffffff14; background:#0c141f}
-    .slide img{display:block; width:100%; height:360px; object-fit:cover}
-    .cap{position:absolute; inset:auto 0 0 0; padding:12px 14px; background:linear-gradient(180deg, transparent, rgba(7,11,18,.85) 60%); font-weight:600}
+    /* Sections */
+    section{padding:80px 0}
+    .section-title{font-size:clamp(22px,3.5vw,34px);margin:0 0 10px}
+    .section-sub{color:var(--muted)}
 
-    /* Founder / compare */
-    .founder{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
-    .quote{font-size:clamp(18px,2.6vw,22px); color:#dfeaff; line-height:1.45}
-    .compare{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-    .panel{padding:18px; border:1px solid #ffffff15; border-radius:16px; background:#0c141f}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.grid-3{grid-template-columns:1fr}}
+
+    /* Ocean Architecture feature list */
+    .feature h3{margin:0 0 6px}
+    .feature p{margin:0;color:var(--muted)}
+    .badge{position:absolute;top:14px;right:14px;font:800 10px/1 ui-sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#06111d;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,#00eaff,#7b5cff);box-shadow:0 8px 28px #1150cc55,inset 0 0 1px #fff8}
+    .feature{position:relative;overflow:hidden}
+
+    /* Compare */
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .panel{border:1px solid rgba(43,132,255,.22);border-radius:var(--radius);padding:18px;background:linear-gradient(180deg,#0d1420,#0b121d)}
+    @media (max-width:900px){.compare{grid-template-columns:1fr}}
 
     /* Gallery */
-    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px}
-    .tile{border-radius:14px; overflow:hidden; border:1px solid #ffffff14; background:#0c141f}
-    .tile img{display:block; width:100%; height:220px; object-fit:cover; cursor:pointer}
-
-    /* Signature card */
-    .sig-wrap{padding:32px 0 64px}
-    .sig-card{max-width:1100px; margin:0 auto; background:#f3f5f7; color:#0d1117; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.25); border:1px solid rgba(0,0,0,.08); overflow:hidden}
-    @media (prefers-color-scheme: dark){ .sig-card{background:#eef1f4; color:#06080a} }
-    .sig-top{display:flex; align-items:center; justify-content:space-between; padding:18px 24px; border-bottom:1px solid rgba(0,0,0,.08)}
-    .sig-main{display:grid; gap:24px; grid-template-columns:1fr 240px; align-items:center; padding:28px 24px}
-    .sig-name h2{font-size:clamp(42px,7vw,80px); line-height:.95; margin:0; font-weight:900; letter-spacing:-1px}
-    .sig-title{margin-top:12px; font-weight:600; text-underline-offset:4px; text-decoration:underline}
-    .sig-avatar{justify-self:end; width:240px; height:240px; border-radius:50%; overflow:hidden; background:#dfe6ee; border:1px solid rgba(0,0,0,.08)}
-    .sig-avatar img{width:100%; height:100%; object-fit:cover; display:block}
-    .sig-grid{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid rgba(0,0,0,.08); background:#f7f9fb}
-    .sig-cell{padding:14px 18px}
-    .sig-label{font-size:12px; opacity:.6}
+    .gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:26px}
+    .tile{aspect-ratio:1/1;border-radius:14px;overflow:hidden;position:relative;background:radial-gradient(circle at 30% 30%,#142033,#0a1020 60%);border:1px solid rgba(43,132,255,.28)}
+    .tile::after{content:"";position:absolute;inset:-30% -30%;background:conic-gradient(from 0deg,transparent,rgba(0,234,255,.22),transparent 30%,rgba(123,92,255,.18) 60%,transparent);animation:spin 12s linear infinite;mix-blend-mode:plus-lighter;opacity:.5}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @media (max-width:1100px){.gallery{grid-template-columns:repeat(4,1fr)}}
+    @media (max-width:720px){.gallery{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:520px){.gallery{grid-template-columns:repeat(2,1fr)}}
 
     /* Footer */
-    footer{padding:24px 0; border-top:1px solid #ffffff12}
-    .foot{display:flex; gap:8px; align-items:center; flex-wrap:wrap; color:var(--muted)}
-    .dot{opacity:.6}
+    footer{border-top:1px solid rgba(43,132,255,.2);background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.04));padding:26px 0 60px}
+    .foot{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .muted{color:var(--muted)}
 
-    /* Lightbox */
-    .lightbox{position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.7)}
-    .lightbox.open{display:grid}
-    .lightbox img{max-width:92vw; max-height:88vh; border-radius:12px}
-    .lightbox .close{position:absolute; top:16px; right:16px}
-
-    @keyframes oceanShift{0%{transform:translate3d(-2%,-1%,0) rotate(0) scale(1.02)}50%{transform:translate3d(1%,2%,0) rotate(180deg) scale(1.05)}100%{transform:translate3d(3%,-2%,0) rotate(360deg) scale(1.02)}}
-
-    @media (max-width:900px){ .founder{grid-template-columns:1fr} .compare{grid-template-columns:1fr} }
+    @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#"><span class="orb"></span><span>PROJECT OCEAN™</span></a>
-      <nav style="display:flex; gap:10px">
-        <a class="cta ghost" href="#investor">Request Investor Access</a>
-      </nav>
+      <a class="brand" href="#"><span class="orb" aria-hidden="true"></span> PROJECT OCEAN</a>
+      <ul class="nav-links" id="site-nav">
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#gallery">Showcase</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="cta" href="#investor">Request Access</a></li>
+      </ul>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="badge">Emotionally‑Aware • Privacy‑First</div>
-      <h1>Humanity’s next wave of intelligence.</h1>
-      <p class="lede">To guide the world’s evolution toward <strong>emotionally‑aware intelligence</strong> — a sovereignty layer for humans and AI where memory is private, agency is respected, and alignment is earned.</p>
-      <div class="buttons">
-        <a class="cta" href="#investor">Request Investor Access</a>
-        <a class="cta ghost" href="#roadmap">View Roadmap</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- MILESTONES / CAROUSEL -->
-  <section id="milestones">
-    <div class="wrap">
-      <h2>Milestones</h2>
-      <p class="muted">A staged path from Emotion Engine MVP to public pilots, governance, and deployment.</p>
-      <div class="carousel" id="carousel">
-        <figure class="slide"><img src="assets/circular-milestone.jpg" alt="Circular milestone graphic"><figcaption class="cap">Emotion Engine MVP → Governance & Ethics Layer</figcaption></figure>
-        <figure class="slide"><img src="assets/ecosystem-roadmap.jpg" alt="Ocean Milestone Ecosystem roadmap"><figcaption class="cap">Ecosystem Roadmap & public readiness</figcaption></figure>
-        <figure class="slide"><img src="assets/architecture-diagram.jpg" alt="Project Ocean architecture diagram"><figcaption class="cap">Architecture: Dialogue, Sovereignty, Memory Vault</figcaption></figure>
-        <figure class="slide"><img src="assets/ai-brain-hero.jpg" alt="Project Ocean brain with circuit motif"><figcaption class="cap">Secure Memory Vault & encrypted timeline</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOUNDER -->
-  <section>
-    <div class="wrap founder">
-      <div>
-        <h2>Founder &amp; Vision Architect</h2>
-        <p class="quote">“We’re not building tools — we’re building trust.”</p>
-        <p class="muted">Sarah Carmody, Founder of Project Ocean. Designing emotionally‑aware intelligence that remembers the person, not just the task.</p>
-        <div class="buttons" id="investor">
-          <a class="cta" href="mailto:sarah@projectocean.ai?subject=Investor%20Access%20Request&body=Hi%20Sarah%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20Project%20Ocean.">Email Sarah</a>
-          <a class="cta ghost" href="https://www.linkedin.com/in/sarah-carmody-project-ocean" target="_blank" rel="noopener">LinkedIn</a>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="glow" aria-hidden="true"></div>
+      <canvas id="bg-particles" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <div class="eyebrow">Sovereignty Layer • Secure Memory Vaults</div>
+        <h1 class="title">Humanity’s next wave of intelligence.</h1>
+        <p class="lede">We’re building emotionally‑aware AI that remembers the <em>person</em>, not just the task — where memory is private, agency is respected, and alignment is earned.</p>
+        <div class="buttons">
+          <a class="cta" href="#investor">Request Investor Access</a>
+          <a class="cta" href="#demo" style="background:linear-gradient(180deg,#19ffa7,#00eaff)">Try Reflection Demo</a>
+        </div>
+        <div class="stats">
+          <div class="card"><div class="k">256‑bit<small>Vault Encryption</small></div></div>
+          <div class="card"><div class="k">On‑device<small>Private Reflection</small></div></div>
+          <div class="card"><div class="k">Continuity<small>Long‑term Memory</small></div></div>
         </div>
       </div>
-      <div class="card" style="padding:0; overflow:hidden">
-        <img src="assets/founder-card.jpg" alt="Sarah Carmody — Founder & Vision Architect" style="display:block; width:100%; height:100%; object-fit:cover">
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- COMPARISON -->
-  <section>
-    <div class="wrap">
-      <h2>Why Ocean, not automation</h2>
-      <div class="compare">
-        <div class="panel">
-          <h3>Project Ocean</h3>
-          <ul>
-            <li><strong>Memory &amp; Sovereignty</strong> — secure vaults remember the person under user control.</li>
-            <li><strong>Emotional Intelligence</strong> — empathetic responses, crisis awareness.</li>
-            <li><strong>Guardrails First</strong> — user autonomy and a trusted partnership.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Conventional Automation</h3>
-          <ul>
-            <li>Task execution &amp; transactional action‑taking.</li>
-            <li>Autonomy without persistent human‑context memory.</li>
-            <li>Utility‑first, not relationship‑centric.</li>
-          </ul>
+    <!-- ARCHITECTURE / FEATURES -->
+    <section id="architecture">
+      <div class="wrap">
+        <h2 class="section-title">Architecture — the Ocean Stack</h2>
+        <p class="section-sub">Three pillars working in concert to protect sovereignty and grow intelligence.</p>
+        <div class="grid-3">
+          <div class="card feature">
+            <span class="badge">Core</span>
+            <h3>Lects — Dialog Engine</h3>
+            <p>Emotionally‑intelligent dialog with continuity, safety rails, and presence. Built for private, long‑term partnership.</p>
+          </div>
+          <div class="card feature">
+            <span class="badge">Boundary</span>
+            <h3>Firmament — Sovereignty Layer</h3>
+            <p>Hard separation of agency and data. Explicit consent channels, red‑teamable policies, and transparent controls.</p>
+          </div>
+          <div class="card feature">
+            <span class="badge">Memory</span>
+            <h3>Secure Memory Vault</h3>
+            <p>Encrypted, time‑indexed memory streams with emotion tags, timeline playback, and exportable .ics summaries.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- GALLERY -->
-  <section>
-    <div class="wrap">
-      <h2>Visuals</h2>
-      <p class="muted">Tap any image to view full screen.</p>
-      <div class="grid" id="gallery">
-        <div class="tile"><img src="assets/hero.jpg" alt="Hero — Human & AI connection"></div>
-        <div class="tile"><img src="assets/circular-milestone.jpg" alt="Circular milestone graphic"></div>
-        <div class="tile"><img src="assets/ecosystem-roadmap.jpg" alt="Milestone ecosystem"></div>
-        <div class="tile"><img src="assets/architecture-diagram.jpg" alt="Architecture flow"></div>
-        <div class="tile"><img src="assets/differs-from-automation.jpg" alt="How Ocean differs graphic"></div>
-        <div class="tile"><img src="assets/founder-card.jpg" alt="Founder card"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Signature / Contact Card -->
-  <section class="sig-wrap" id="contact">
-    <div class="sig-card">
-      <header class="sig-top">
-        <div class="sig-brand">Project Ocean</div>
-        <div class="sig-controls" aria-hidden="true">➜</div>
-      </header>
-      <div class="sig-main">
-        <div class="sig-name">
-          <h2>Sarah<br><span>Carmody</span></h2>
-          <p class="sig-title">Founder &amp; Vision Architect</p>
+    <!-- COMPARE -->
+    <section id="vision">
+      <div class="wrap">
+        <h2 class="section-title">Why Ocean, not automation</h2>
+        <div class="compare">
+          <div class="panel">
+            <h3>Project Ocean</h3>
+            <ul>
+              <li><strong>Private by default</strong> — your data never becomes product.</li>
+              <li><strong>Relationship‑centric</strong> — continuity across time, not one‑off tasks.</li>
+              <li><strong>Emotion‑literate</strong> — reflective feedback, not empty platitudes.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Conventional Automation</h3>
+            <ul>
+              <li>Click‑doers optimized for throughput.</li>
+              <li>No durable sense of self or history.</li>
+              <li>Utility first, partnership last.</li>
+            </ul>
+          </div>
         </div>
-        <figure class="sig-avatar"><img src="assets/avatar.jpg" alt="Photo of Sarah Carmody" loading="lazy"></figure>
       </div>
-      <div class="sig-grid">
-        <div class="sig-cell"><div class="sig-label">Location</div><a href="https://maps.apple.com/?q=Palo+Alto,+CA" target="_blank" rel="noopener">Palo Alto, CA</a></div>
-        <div class="sig-cell"><div class="sig-label">Phone</div><a href="tel:+16503089993">650&nbsp;308‑9993</a></div>
-        <div class="sig-cell"><div class="sig-label">Website</div><a href="https://projectocean.ai">projectocean.ai</a></div>
-        <div class="sig-cell"><div class="sig-label">Email</div><a href="mailto:sarah@projectocean.ai">sarah@projectocean.ai</a></div>
+    </section>
+
+    <!-- GALLERY (placeholder tiles) -->
+    <section id="gallery">
+      <div class="wrap">
+        <h2 class="section-title">Visuals</h2>
+        <p class="section-sub">Swap these tiles with <code>assets/*.jpg</code> as you collect final art.</p>
+        <div class="gallery">
+          <div class="tile"></div><div class="tile"></div><div class="tile"></div>
+          <div class="tile"></div><div class="tile"></div><div class="tile"></div>
+          <div class="tile"></div><div class="tile"></div><div class="tile"></div>
+          <div class="tile"></div><div class="tile"></div><div class="tile"></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- DEMO: Reflection -->
+    <section id="demo">
+      <div class="wrap">
+        <h2 class="section-title">10‑second Reflection (local demo)</h2>
+        <p class="section-sub">Type a sentence; Ocean mirrors back what matters — this runs locally in your browser.</p>
+        <div class="card" style="display:grid;gap:12px;padding:16px">
+          <label>
+            <span class="muted">Your thought</span><br>
+            <input id="reflect-in" placeholder="I feel excited but overwhelmed about launch" style="width:100%;padding:12px 14px;background:#0f1a28;color:var(--ink);border:1px solid #2b84ff33;border-radius:12px;outline:none" />
+          </label>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <button class="cta" id="reflect-btn" type="button">Reflect</button>
+            <span id="reflect-out" class="muted"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / INVESTOR -->
+    <section id="contact">
+      <div class="wrap">
+        <h2 class="section-title">Say hello</h2>
+        <p class="section-sub">Investor access, partnerships, or press.</p>
+        <div class="card" style="display:grid;gap:12px;padding:18px">
+          <a class="cta" id="investor" href="mailto:sarah@projectocean.ai?subject=Investor%20Access%20Request">Email Sarah</a>
+          <div class="muted">Palo Alto, California • projectocean.ai</div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="wrap foot">
-      <span>© <span id="y"></span> Project Ocean™</span>
-      <span class="dot">•</span>
-      <span>Patent Pending</span>
-      <span class="dot">•</span>
-      <a href="mailto:sarah@projectocean.ai">sarah@projectocean.ai</a>
-      <span class="dot">•</span>
-      <a href="https://projectocean.ai">projectocean.ai</a>
-      <span class="dot">•</span>
-      <span>Palo Alto, California</span>
+      <a class="brand" href="#"><span class="orb"></span> PROJECT OCEAN</a>
+      <small class="muted">© <span id="year"></span> Project Ocean™ — Patent Pending</small>
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
-    <button class="close" id="closeBox">Close ✕</button>
-    <img alt="">
-  </div>
-
   <script>
-    // Year in footer
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Header strengthen on scroll
+    const header = document.querySelector('header');
+    const nav    = document.querySelector('.nav');
+    function onScroll(){ header?.classList.toggle('scrolled', window.scrollY>12); }
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
-    // Lightbox
-    (function(){
-      const lb = document.getElementById('lightbox');
-      const lbImg = lb.querySelector('img');
-      const gallery = document.getElementById('gallery');
-      if(!gallery) return;
-      gallery.addEventListener('click', e=>{
-        const img = e.target.closest('.tile img');
-        if(!img) return;
-        lbImg.src = img.src; lb.classList.add('open');
-      });
-      document.getElementById('closeBox').addEventListener('click', ()=> lb.classList.remove('open'));
-      lb.addEventListener('click', e=>{ if(e.target === lb) lb.classList.remove('open'); });
-      window.addEventListener('keydown', e=>{ if(e.key === 'Escape') lb.classList.remove('open'); });
-    })();
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Smooth scroll for internal links
+    // Smooth internal links
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        const el = document.querySelector(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-      });
+      a.addEventListener('click', e=>{ const id=a.getAttribute('href').slice(1); const el=document.getElementById(id); if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }});
     });
 
-    // Reflection mini‑demo (optional: add the input + button where you want)
-    document.getElementById('reflect-btn')?.addEventListener('click', ()=>{
-      const vEl = document.getElementById('reflect-in');
-      const out = document.getElementById('reflect-out');
-      if(!vEl || !out) return;
-      const v = (vEl.value||'').trim();
-      if(!v){ out.textContent = ''; return; }
-      const tone = /overwhelm|anxious|worried|stress/i.test(v) ? 'grounding' :
-                   /excited|proud|happy|grateful/i.test(v) ? 'amplifying' : 'balanced';
-      out.textContent = `Ocean notes a ${tone} signal and would store a private, time‑indexed entry: “${v}”.`;
+    // Neon canvas particles
+    const c = document.getElementById('bg-particles'); const ctx = c.getContext('2d'); let DPR = Math.min(2, window.devicePixelRatio||1);
+    const P=[]; const COUNT=90; const SPEED=.2; const COLORS=['#00eaff','#7b5cff','#9ab0cc','#eaf3ff'];
+    function resize(){ c.width=Math.floor(c.clientWidth*DPR||innerWidth*DPR); c.height=Math.floor(c.clientHeight*DPR||innerHeight*.7*DPR); }
+    function init(){ resize(); P.length=0; for(let i=0;i<COUNT;i++){ P.push({ x:Math.random()*c.width, y:Math.random()*c.height, r:Math.random()*1.6+.6, vx:(Math.random()-.5)*SPEED*DPR, vy:(Math.random()-.5)*SPEED*DPR, col:COLORS[Math.floor(Math.random()*COLORS.length)] }); }}
+    let mx=null,my=null; c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(); mx=(e.clientX-r.left)*DPR; my=(e.clientY-r.top)*DPR;}); c.addEventListener('pointerleave',()=>{mx=my=null});
+    function step(){ ctx.clearRect(0,0,c.width,c.height); for(let i=0;i<P.length;i++){ const a=P[i]; a.x+=a.vx; a.y+=a.vy; if(a.x<0||a.x>c.width) a.vx*=-1; if(a.y<0||a.y>c.height) a.vy*=-1; if(mx!==null){ const dx=a.x-mx, dy=a.y-my, d2=dx*dx+dy*dy; if(d2<10000){ a.vx+=dx*0.00002; a.vy+=dy*0.00002; }} ctx.beginPath(); ctx.arc(a.x,a.y,a.r,0,Math.PI*2); ctx.fillStyle=a.col; ctx.globalAlpha=.9; ctx.fill(); for(let j=i+1;j<P.length;j++){ const b=P[j]; const dx=a.x-b.x, dy=a.y-b.y; const d2=dx*dx+dy*dy; if(d2<22000){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.strokeStyle='rgba(117,181,255,.18)'; ctx.lineWidth=.7; ctx.stroke(); } } } requestAnimationFrame(step); }
+    new ResizeObserver(resize).observe(c); init(); step();
+
+    // Reflection demo (local tone)
+    const tin = document.getElementById('reflect-in');
+    const tout = document.getElementById('reflect-out');
+    document.getElementById('reflect-btn')?.addEventListener('click',()=>{
+      const v=(tin?.value||'').trim(); if(!v){ tout.textContent=''; return; }
+      const tone = /overwhelm|anxious|worried|stress|tired/i.test(v) ? 'grounding' : /excited|proud|happy|grateful|hope/i.test(v) ? 'amplifying' : 'balanced';
+      tout.textContent = `Ocean notes a ${tone} signal and would store a private, time‑indexed entry: “${v}”.`;
     });
   </script>
 </body>
